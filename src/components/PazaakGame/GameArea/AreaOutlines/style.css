@@ -1,0 +1,16 @@
+.ConsoleAccents {
+    background: #6E7C85;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 78px;
+}
+
+#UpperAreaOutline {
+    position: absolute;
+    width: 90%;
+    height: 40%;
+    top: 4%;
+    left: 5.1%;
+    margin: 0 auto;
+}

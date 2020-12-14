@@ -1,0 +1,17 @@
+.ConsoleMetal {
+    background: #A6B3C0;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    filter: blur(1px);
+    border-radius: 92px;
+}
+
+#GameArea {
+    position: absolute;
+    width: 80%;
+    height: 94.5%;
+    top: 4%;
+    left: 10%;
+    margin: 0 auto;
+}
+
