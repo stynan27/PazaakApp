@@ -1,10 +1,12 @@
 // @ is an alias to /src
 
-import AreaOutlines from '@/components/PazaakGame/GameArea/AreaOutlines/index'
+import OpponentGameArea from '@/components/PazaakGame/GameArea/OpponentGameArea/index'
+import PlayerGameArea from '@/components/PazaakGame/GameArea/PlayerGameArea/index'
 
 export default {
   name: 'GameArea',
   components: {
-    AreaOutlines
+    OpponentGameArea,
+    PlayerGameArea
   },
 }

@@ -6,9 +6,3 @@
     background: linear-gradient(180deg, #82979F 0%, #6B7D85 100%);
     background-blend-mode: darken;
 }
-
-/* generalize this name */
-.HandBackground{
-    background: #2A2938;
-    border-radius: 13px;
-}

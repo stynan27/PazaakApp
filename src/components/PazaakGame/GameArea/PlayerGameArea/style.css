@@ -1,0 +1,123 @@
+.CardRow1 {
+    height: 33%;
+    width: 100%;
+}
+
+.CardRow2 {
+    height: 70%;
+    width: 100%;
+}
+
+.CardRow3 {
+    height: 30%;
+    width: 100%;
+}
+
+#ArrayCardSlot {
+    position: relative;
+    width: 124px;
+    height: 150px;
+    left: 45%;
+    right: 0%;
+
+    border-radius: 15px;
+}
+
+#HandCardSlot {
+    position: relative;
+    top: -8%;
+    width: 124px;
+    height: 150px;
+    left: 3%;
+
+    margin-left: 20%;
+    border-radius: 15px;
+}
+
+#ModifierArea {
+    position: relative;
+    width: 75%;
+    height: 40%;
+    top: 2%;
+    left: 23%;
+
+    background: #242332; 
+    border-radius: 6px;
+}
+
+#PlayerCardArray {
+    width: 100%;
+    height: 56%;
+    left: 50%;
+    justify-content: center;
+}
+
+#PlayerGameArea1 {
+    position: absolute;
+    width: 48.5%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+
+    border: 2px solid #000000;
+    border-radius: 41px;
+}
+
+#PlayerGameArea2 {
+    position: absolute;
+    width: 54%;
+    height: 46%;
+    left: -5.6%;
+    bottom: 0%;
+
+    border: 2px solid #000000;
+    border-right: none;
+    border-radius: 41px;
+}
+
+#PlayerGameArea3 {
+    position: absolute;
+    width: 48.5%;
+    height: 46%;
+    left: 0%;
+    bottom: 0%;
+
+    border: 2px solid #000000;
+    border-top: none;
+    border-left: none;
+}
+
+#PlayerHandBackground {
+    position: absolute;
+    width: 201%;
+    height: 62%;
+    top: 14%;
+    left: -100.4%;
+
+    border: 2px solid #000000;
+    border-left: none;
+    border-right: none;
+}
+
+#PlayerHandShadow1 {
+    position: absolute;
+    width: 100%;
+    height: 88%;
+    top: 6%;
+    left: -5%;
+
+    border: 2px solid #000000;
+    border-radius: 41px;
+}
+
+#PlayerHandShadow2 {
+    position: absolute;
+    width: 50%;
+    height: 88%;
+    top: 6%;
+    left: 45%;
+
+    border: 2px solid #000000;
+    border-left: none;
+}

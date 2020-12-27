@@ -1,17 +1,73 @@
+.CardArrayBackground {
+    background: #536367;
+}
+
+.CardSlotBackground {
+    background: linear-gradient(180deg, #807B64 0%, #151631 100%);
+    border-radius: 15px;
+}
+
+.ConsoleAccents {
+    background: #6E7C85;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 78px;
+}
+
 .ConsoleMetal {
     background: #A6B3C0;
-    border: 1px solid #000000;
     box-sizing: border-box;
-    filter: blur(1px);
     border-radius: 92px;
+
+    backdrop-filter: blur(2px);
+    border: 1px solid #000000;
+}
+
+.HandBackground {
+    background: #2A2938;
+}
+
+.PanelSeparation {
+    background: linear-gradient(180deg, #6D7C84 0%, #A3B5BF 100%);
+    border-radius: 41px;
 }
 
 #GameArea {
     position: absolute;
-    width: 80%;
+    width: 90%;
     height: 94.5%;
     top: 4%;
-    left: 10%;
+    left: 5%;
     margin: 0 auto;
 }
 
+#UpperAreaOutline {
+    position: absolute;
+    width: 90%;
+    height: 46.5%;
+    top: 4%;
+    left: 5.1%;
+    margin: 0 auto;
+
+    border: 2px solid #000000;
+}
+
+#PlayAreaBackground {
+    position: absolute;
+    width: 90%;
+    height: 188%;
+    left: 5%;
+    top: 13%;
+    margin: 0 auto;
+}
+
+#PlayerDivisionLine {
+    position: relative;
+    width: 15%;
+    height: 6px;
+    left: 42.5%;
+    top: 0px;
+
+    background: #000000;
+}
