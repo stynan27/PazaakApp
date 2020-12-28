@@ -1,26 +1,6 @@
 <div>
     <div id="PlayerGameArea1" class="CardArrayBackground">
-        <v-container id="PlayerCardArray">
-            <v-row
-                v-for="rowNum in 3"
-                :key="rowNum"
-                class="CardRow1"
-                :justify="'end'"
-            >
-                <v-col
-                    v-for="colNum in 3"
-                    :key="colNum"
-                    cols="4"
-                >
-                    <v-card
-                        id="ArrayCardSlot"
-                        class="CardSlotBackground"
-                    >
-                        r{{ rowNum }}c{{ colNum }}
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-container>
+        <PlayerCardArray />
     </div>
     <div id="PlayerGameArea2" class="CardArrayBackground">
     </div>
@@ -28,40 +8,7 @@
         <div id="PlayerHandShadow1" class="HandBackground">
         </div>
         <div id="PlayerHandShadow2" class="HandBackground">
-            <v-container id="PlayerHandBackground" class="CardArrayBackground">
-                <v-row
-                    class="CardRow2"
-                >
-                    <v-col
-                        v-for="colNum in 4"
-                        :key="colNum"
-                        cols="3"
-                        
-                    >
-                        <v-card
-                            id="HandCardSlot"
-                            class="CardSlotBackground"
-                        >
-                            c{{ colNum }}
-                        </v-card>
-                    </v-col>
-                </v-row>
-                <v-row
-                    class="CardRow2"
-                >
-                    <v-col
-                        v-for="colNum in 4"
-                        :key="colNum"
-                        cols="3"
-                    >
-                        <v-card
-                            id="ModifierArea"
-                        >
-                            c{{ colNum }}
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
+            <PlayerHandArray />
         </div>
     </div>
 </div>

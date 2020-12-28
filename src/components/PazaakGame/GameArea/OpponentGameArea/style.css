@@ -1,36 +1,35 @@
 #OpponentGameArea1 {
     position: absolute;
-    width: 48%;
+    width: 48.5%;
     height: 100%;
     top: 0%;
     right: 0%;
     bottom: 0%;
 
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 41px;
-    z-index: 1;
 }
 
 #OpponentGameArea2 {
     position: absolute;
-    width: 50%;
-    height: 40%;
-    right: -5.5%;
+    width: 54%;
+    height: 46%;
+    right: -5.6%;
     bottom: 0%;
 
+    border: 2px solid #000000;
+    border-left: none;
     border-radius: 41px;
-    z-index: 2;
 }
 
 #OpponentGameArea3 {
     position: absolute;
-    width: 48%;
-    height: 40%;
-    right: 0%;
+    width: 48.4%;
+    height: 46%;
+    right: 0.1%;
     bottom: 0%;
 
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-top: none;
     border-right: none;
-    z-index: 3;
 }

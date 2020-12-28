@@ -1,0 +1,22 @@
+<v-container id="PlayerCardArray">
+    <v-row
+        v-for="rowNum in 3"
+        :key="rowNum"
+        class="ArrayCardRow"
+        :justify="'end'"
+    >
+        <v-col
+            v-for="colNum in 3"
+            :key="colNum"
+            cols="4"
+
+        >
+            <v-card
+                id="ArrayCardSlot"
+                class="CardSlotBackground"
+            >
+
+            </v-card>
+        </v-col>
+    </v-row>
+</v-container>

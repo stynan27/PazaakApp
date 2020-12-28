@@ -1,57 +1,3 @@
-.CardRow1 {
-    height: 33%;
-    width: 100%;
-}
-
-.CardRow2 {
-    height: 70%;
-    width: 100%;
-}
-
-.CardRow3 {
-    height: 30%;
-    width: 100%;
-}
-
-#ArrayCardSlot {
-    position: relative;
-    width: 124px;
-    height: 150px;
-    left: 45%;
-    right: 0%;
-
-    border-radius: 15px;
-}
-
-#HandCardSlot {
-    position: relative;
-    top: -8%;
-    width: 124px;
-    height: 150px;
-    left: 3%;
-
-    margin-left: 20%;
-    border-radius: 15px;
-}
-
-#ModifierArea {
-    position: relative;
-    width: 75%;
-    height: 40%;
-    top: 2%;
-    left: 23%;
-
-    background: #242332; 
-    border-radius: 6px;
-}
-
-#PlayerCardArray {
-    width: 100%;
-    height: 56%;
-    left: 50%;
-    justify-content: center;
-}
-
 #PlayerGameArea1 {
     position: absolute;
     width: 48.5%;
@@ -78,9 +24,9 @@
 
 #PlayerGameArea3 {
     position: absolute;
-    width: 48.5%;
+    width: 48.4%;
     height: 46%;
-    left: 0%;
+    left: 0.1%;
     bottom: 0%;
 
     border: 2px solid #000000;

@@ -9,7 +9,7 @@
 
 .ConsoleAccents {
     background: #6E7C85;
-    border: 0.5px solid #000000;
+    border: 0.5px solid #9b6b6b;
     box-sizing: border-box;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 78px;
@@ -20,6 +20,7 @@
     box-sizing: border-box;
     border-radius: 92px;
 
+    /* filter: blur(1px); */
     backdrop-filter: blur(2px);
     border: 1px solid #000000;
 }

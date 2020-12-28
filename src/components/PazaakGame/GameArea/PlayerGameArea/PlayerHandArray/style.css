@@ -1,0 +1,40 @@
+.HandCardRow {
+    height: 70%;
+    width: 100%;
+}
+
+#HandCardSlot {
+    position: relative;
+    top: -8%;
+    width: 75%;
+    height: 124.3%;
+    left: 3%;
+
+    margin-left: 20%;
+    border-radius: 15px;
+}
+
+/* example for later mobile resolutions */
+@media all and (max-width: 740px) {
+    #HandCardSlot {
+        position: relative;
+        width: 70%;
+        height: 90%;
+        top: -20%;
+        left: 3%;
+    
+        margin-left: 20%;
+        border-radius: 15px;
+    }
+}
+
+#ModifierArea {
+    position: relative;
+    width: 75%;
+    height: 40%;
+    top: 2%;
+    left: 23%;
+
+    background: #242332; 
+    border-radius: 6px;
+}
