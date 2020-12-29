@@ -1,28 +1,17 @@
-.PlayerHandCardRow {
+.OpponentHandCardRow {
     height: 70%;
     width: 100%;
 }
 
-#ModifierArea {
-    position: relative;
-    width: 75%;
-    height: 33%;
-    top: 4%;
-    left: 20%;
-
-    background: #242332; 
-    border-radius: 6px;
-}
-
-#PlayerHandBackground {
+#OpponentHandBackground {
     position: absolute;
     width: 100%;
     height: 55%;
     top: 16%;
-    right: 5%;
+    left: 5%;
 }
 
-#PlayerHandCardSlot {
+#OpponentHandCardSlot {
     position: relative;
     top: -8%;
     width: 75%;
@@ -34,14 +23,14 @@
 
 /* example for later mobile resolutions */
 @media all and (max-width: 740px) {
-    #PlayerHandCardSlot {
+    #OpponentHandCardSlot {
         position: relative;
         width: 70%;
         height: 90%;
         top: -20%;
-        left: 0%;
+        right: 3%;
     
-        margin-left: 20%;
+        margin-right: 20%;
         border-radius: 15px;
     }
 }
