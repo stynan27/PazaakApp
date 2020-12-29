@@ -1,3 +1,33 @@
+#EndTurnButton {
+    position: absolute;
+    width: 48%;
+    height: 12%;
+    right: 47%;
+    bottom: 20%;
+
+    border-radius: 41px;
+}
+
+#StandButton {
+    position: absolute;
+    width: 48%;
+    height: 12%;
+    right: -5%;
+    bottom: 20%;
+
+    border-radius: 41px;
+}
+
+#ForfeitButton {
+    position: absolute;
+    width: 100%;
+    height: 12%;
+    right: -5%;
+    bottom: 6%;
+
+    border-bottom-right-radius: 41px;
+}
+
 #OpponentGameArea1 {
     position: absolute;
     width: 48.5%;
