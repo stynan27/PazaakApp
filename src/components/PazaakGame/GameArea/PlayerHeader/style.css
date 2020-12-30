@@ -40,11 +40,16 @@
 }
 
 #PlayerNameText {
-    position: relative;
-    top: 2%;
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 100%;
     left: 14%;
 
     transform: skew(20deg);
+
+    display: block;
+    margin : 0 auto;  
 }
 
 #PlayerTurnIndicator {

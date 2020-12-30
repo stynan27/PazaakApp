@@ -1,0 +1,39 @@
+#PlayerRoundsBackground {
+    position: absolute;
+    width: 3%;
+    height: 62%;
+    top: 30%;
+    left: 1%;
+
+    border-bottom-left-radius: 55px;
+}
+
+#PlayerRound1Score {
+    position: relative;
+    height: 12%;
+    width: 70%;
+    top: 5%;
+    left: 18%;
+
+    border-radius: 31px;
+}
+
+#PlayerRound2Score {
+    position: relative;
+    height: 12%;
+    width: 70%;
+    top: 15%;
+    left: 18%;
+
+    border-radius: 31px;
+}
+
+#PlayerRound3Score {
+    position: relative;
+    height: 12%;
+    width: 70%;
+    top: 25%;
+    left: 18%;
+
+    border-radius: 31px;
+}

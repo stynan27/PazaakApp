@@ -43,7 +43,7 @@
     background: #2A2938;
 }
 
-.NameHeaderText {
+.HeaderText {
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -52,8 +52,28 @@
     color: #FFF;
 }
 
+.InnerEllipse {
+    position: absolute;
+    height: 65%;
+    width: 65%;
+    top: 17%;
+    left: 18%;
+    
+    border: 2px solid #000000;
+    box-sizing: border-box;
+
+    border-radius: 31px;
+}
+
 .OpponentSlotBackground {
     background: linear-gradient(180deg, #6D7C84 0%, #2D283A 100%);
+}
+
+.OuterEllipse {
+    position: relative;
+    background: #535C69;
+
+    border: 1px solid #000000;
 }
 
 .PanelSeparation {
