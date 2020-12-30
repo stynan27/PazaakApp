@@ -1,27 +1,5 @@
-.GameButton {
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    letter-spacing: -0.05em;
-    color: #D7C844;
-
-    background: radial-gradient(50% 50% at 50% 50%, #7E7736 0%, #2D283A 100%);
-    border: 2px solid #000000;
-}
-
-.GameButton:hover {
-    background: radial-gradient(50% 50% at 50% 50%, #7E7736 25%, #2D283A 100%);
-}
-
-.GameButton:active {
-    background: radial-gradient(50% 50% at 50% 50%, #7E7736 50%, #2D283A 100%);
-    transform: translateY(1px);
-    border: 2px solid #7E7736;
-}
-
 .CardArrayBackground {
-    background: #536367;
+    background: #535C69;
 }
 
 .CardSlotBackground {
@@ -31,24 +9,47 @@
 
 .ConsoleAccents {
     background: #6E7C85;
-    border: 0.5px solid #9b6b6b;
-    box-sizing: border-box;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 78px;
 }
 
 .ConsoleMetal {
     background: #A6B3C0;
-    box-sizing: border-box;
-    border-radius: 92px;
-
-    /* filter: blur(1px); */
-    backdrop-filter: blur(2px);
     border: 1px solid #000000;
+}
+
+.ButtonText {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 120%;
+    letter-spacing: -0.05em;
+    color: #D7C844;
+}
+
+.GameButton {
+    background: radial-gradient(50% 50% at 50% 50%, #7E7736 0%, #2D283A 100%);
+    border: 2px solid #000000;
+}
+
+.GameButton:hover {
+    border: 2px solid #7E7736;
+}
+
+.GameButton:active {
+    background: radial-gradient(50% 50% at 50% 50%, #7E7736 50%, #2D283A 100%);
+    transform: translateY(1px);
 }
 
 .HandBackground {
     background: #2A2938;
+}
+
+.NameHeaderText {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 120%;
+    letter-spacing: -0.05em;
+    color: #FFF;
 }
 
 .OpponentSlotBackground {
@@ -60,13 +61,25 @@
     border-radius: 41px;
 }
 
+.RoundScore {
+    background: radial-gradient(50% 50% at 50% 50%, #BF2323 0.01%, #950000 100%);
+    border: 3px solid #000000;
+    box-sizing: border-box;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
 #GameArea {
-    position: absolute;
+    position: relative;
     width: 90%;
     height: 94.5%;
     top: 4%;
     left: 5%;
-    margin: 0 auto;
+
+    box-sizing: border-box;
+    border-radius: 92px;
+
+    /* filter: blur(1px); */
+    /* backdrop-filter: blur(2px); */
 }
 
 #UpperAreaOutline {
@@ -78,6 +91,10 @@
     margin: 0 auto;
 
     border: 2px solid #000000;
+    border-top: none;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 78px;
 }
 
 #PlayAreaBackground {
@@ -94,7 +111,7 @@
     width: 15%;
     height: 6px;
     left: 42.5%;
-    top: 0px;
+    /* left: 48%; */
 
     background: #000000;
 }

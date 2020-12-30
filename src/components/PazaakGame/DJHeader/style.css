@@ -5,4 +5,7 @@
     top: -1%;
     left: 30%;
     margin: 0 auto;
+
+    border-bottom-left-radius: 41px;
+    border-bottom-right-radius: 41px;
 }
