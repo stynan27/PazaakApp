@@ -61,9 +61,15 @@
     border-radius: 41px;
 }
 
+.RoundBlank {
+    background: radial-gradient(50% 50% at 50% 50%, #9DA6B7 0%, #0D1016 100%);
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+
 .RoundScore {
     background: radial-gradient(50% 50% at 50% 50%, #BF2323 0.01%, #950000 100%);
-    border: 3px solid #000000;
+    border: 2px solid #000000;
     box-sizing: border-box;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
@@ -108,10 +114,11 @@
 
 #PlayerDivisionLine {
     position: relative;
-    width: 15%;
-    height: 6px;
-    left: 42.5%;
+    width: 14.8%;
+    height: 5px;
+    left: 42.6%;
     /* left: 48%; */
 
     background: #000000;
+    border: 1px solid #000000;
 }
