@@ -4,7 +4,4 @@
 
 export default {
   name: 'PlayerHandArray',
-  components: {
-
-  },
 }

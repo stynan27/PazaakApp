@@ -1,13 +1,13 @@
 // @ is an alias to /src
 
-import PlayerHeader from '@/components/PazaakGame/GameArea/PlayerHeader/index'
-import OpponentHeader from '@/components/PazaakGame/GameArea/OpponentHeader/index'
-import PlayerScore from '@/components/PazaakGame/GameArea/PlayerScore/index'
-import OpponentScore from '@/components/PazaakGame/GameArea/OpponentScore/index'
-import PlayerRoundsWon from '@/components/PazaakGame/GameArea/PlayerRoundsWon/index'
-import OpponentRoundsWon from '@/components/PazaakGame/GameArea/OpponentRoundsWon/index'
-import OpponentGameArea from '@/components/PazaakGame/GameArea/OpponentGameArea/index'
-import PlayerGameArea from '@/components/PazaakGame/GameArea/PlayerGameArea/index'
+import PlayerHeader from '@/components/PazaakGame/GameArea/PlayerArea/PlayerHeader/index'
+import OpponentHeader from '@/components/PazaakGame/GameArea/OpponentArea/OpponentHeader/index'
+import PlayerScore from '@/components/PazaakGame/GameArea/PlayerArea/PlayerScore/index'
+import OpponentScore from '@/components/PazaakGame/GameArea/OpponentArea/OpponentScore/index'
+import PlayerRoundsWon from '@/components/PazaakGame/GameArea/PlayerArea/PlayerRoundsWon/index'
+import OpponentRoundsWon from '@/components/PazaakGame/GameArea/OpponentArea/OpponentRoundsWon/index'
+import PlayerCardArea from '@/components/PazaakGame/GameArea/PlayerArea/PlayerCardArea/index'
+import OpponentCardArea from '@/components/PazaakGame/GameArea/OpponentArea/OpponentCardArea/index'
 
 export default {
   name: 'GameArea',
@@ -18,7 +18,7 @@ export default {
     OpponentScore,
     PlayerRoundsWon,
     OpponentRoundsWon,
-    OpponentGameArea,
-    PlayerGameArea
+    OpponentCardArea,
+    PlayerCardArea
   },
 }

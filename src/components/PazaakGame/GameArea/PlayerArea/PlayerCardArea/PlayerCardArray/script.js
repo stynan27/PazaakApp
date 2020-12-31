@@ -4,12 +4,4 @@
 
 export default {
   name: 'PlayerCardArray',
-  components: {
-    
-  },
-  data() {
-    return {
-      
-    }
-  }
 }

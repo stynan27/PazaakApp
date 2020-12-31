@@ -2,7 +2,4 @@
 
 export default {
   name: 'OpponentCardArray',
-  components: {
-
-  },
 }

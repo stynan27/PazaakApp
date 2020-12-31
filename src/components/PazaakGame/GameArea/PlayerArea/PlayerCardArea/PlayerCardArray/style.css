@@ -14,7 +14,8 @@
     position: relative;
     width: 54.4%;
     height: 105%;
-    left: 45%;
+    /* left: 45%; */
+    left: 32%;
 
     border-radius: 15px;
 }
