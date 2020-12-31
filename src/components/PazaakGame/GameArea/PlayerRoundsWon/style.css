@@ -9,31 +9,31 @@
 }
 
 #PlayerRound1Score {
-    position: relative;
+    position: absolute;
     height: 12%;
     width: 70%;
-    top: 5%;
-    left: 18%;
+    top: 4%;
+    left: 15%;
 
     border-radius: 31px;
 }
 
 #PlayerRound2Score {
-    position: relative;
+    position: absolute;
     height: 12%;
     width: 70%;
-    top: 15%;
-    left: 18%;
+    top: 24%;
+    left: 15%;
 
     border-radius: 31px;
 }
 
 #PlayerRound3Score {
-    position: relative;
+    position: absolute;
     height: 12%;
     width: 70%;
-    top: 25%;
-    left: 18%;
+    top: 44%;
+    left: 15%;
 
     border-radius: 31px;
 }

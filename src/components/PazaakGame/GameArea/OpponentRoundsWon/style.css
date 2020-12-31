@@ -1,0 +1,39 @@
+#OpponentRoundsBackground {
+    position: absolute;
+    width: 3%;
+    height: 62%;
+    top: 30%;
+    right: 1%;
+
+    border-bottom-right-radius: 55px;
+}
+
+#OpponentRound1Score {
+    position: absolute;
+    height: 12%;
+    width: 70%;
+    top: 4%;
+    left: 15%;
+
+    border-radius: 31px;
+}
+
+#OpponentRound2Score {
+    position: absolute;
+    height: 12%;
+    width: 70%;
+    top: 24%;
+    left: 15%;
+
+    border-radius: 31px;
+}
+
+#OpponentRound3Score {
+    position: absolute;
+    height: 12%;
+    width: 70%;
+    top: 44%;
+    left: 15%;
+
+    border-radius: 31px;
+}

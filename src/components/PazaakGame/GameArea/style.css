@@ -52,12 +52,25 @@
     color: #FFF;
 }
 
-.InnerEllipse {
+.InnerEllipseLeft {
     position: absolute;
     height: 65%;
     width: 65%;
-    top: 17%;
-    left: 18%;
+    top: 17.5%;
+    left: 17%;
+    
+    border: 2px solid #000000;
+    box-sizing: border-box;
+
+    border-radius: 31px;
+}
+
+.InnerEllipseRight {
+    position: absolute;
+    height: 65%;
+    width: 65%;
+    top: 17.5%;
+    right: 17%;
     
     border: 2px solid #000000;
     box-sizing: border-box;
