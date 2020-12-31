@@ -26,16 +26,16 @@
 }
 
 .GameButton {
-    background: radial-gradient(50% 50% at 50% 50%, #7E7736 0%, #2D283A 100%);
+    background: radial-gradient(25% 40% at 50% 50%, #868673 0%, #2D283A 100%);
     border: 2px solid #000000;
 }
 
 .GameButton:hover {
+    background: radial-gradient(30% 50% at 50% 50%, #7E7736 25%, #2D283A 100%);
     border: 2px solid #7E7736;
 }
 
 .GameButton:active {
-    background: radial-gradient(50% 50% at 50% 50%, #7E7736 50%, #2D283A 100%);
     transform: translateY(1px);
 }
 
