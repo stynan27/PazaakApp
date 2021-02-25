@@ -14,7 +14,7 @@ export default new Router({
       component: MainMenu
     },
     {
-      path: '/game',
+      path: '/pazaak-game',
       name: 'PazaakGame',
       component: PazaakGame
     },
