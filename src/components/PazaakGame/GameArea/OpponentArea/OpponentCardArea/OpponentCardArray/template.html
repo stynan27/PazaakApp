@@ -1,21 +1,21 @@
-<v-container id="OpponentCardArrayContainer">
+<v-container
+  class="opponent-card-grid"
+>
+  <v-col
+    class="opponent-card-col"
+    v-for="colNum in 3"
+    :key="colNum"
+    cols="4"
+  >
     <v-row
-        v-for="rowNum in 3"
-        :key="rowNum"
-        class="OpponentCardArrayRow"
+      v-for="rowNum in 3"
+      :key="rowNum"
     >
-        <v-col
-            v-for="colNum in 3"
-            :key="colNum"
-            cols="4"
-
-        >
-            <v-card
-                id="OpponentCardArraySlot"
-                class="CardSlotBackground"
-            >
-
-            </v-card>
-        </v-col>
+      <v-card
+        class="CardSlotBackground"
+        id="OpponentCardArraySlot"
+      >
+      </v-card>
     </v-row>
+  </v-col>
 </v-container>

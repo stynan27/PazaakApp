@@ -1,34 +1,17 @@
-<v-container id="PlayerHandBackground" class="CardArrayBackground">
-    <v-row
-        class="PlayerHandCardRow"
+<container class="player-hand-grid">
+  <container
+    v-for="colNum in 4"
+    :key="colNum"
+    cols="4"
+  >
+    <v-card
+      id="PlayerHandCardSlot"
+      class="CardSlotBackground"
     >
-        <v-col
-            v-for="colNum in 4"
-            :key="colNum"
-            cols="3"
-            
-        >
-            <v-card
-                id="PlayerHandCardSlot"
-                class="CardSlotBackground"
-            >
-
-            </v-card>
-        </v-col>
-    </v-row>
-    <v-row
-        class="PlayerHandCardRow"
+    </v-card>
+    <v-card
+      id="ModifierArea"
     >
-        <v-col
-            v-for="colNum in 4"
-            :key="colNum"
-            cols="3"
-        >
-            <v-card
-                id="ModifierArea"
-            >
-
-            </v-card>
-        </v-col>
-    </v-row>
-</v-container>
+    </v-card>
+  </container>
+</container>

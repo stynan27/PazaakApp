@@ -1,20 +1,24 @@
-<v-container id="PlayerCardArrayContainer">
+<v-container
+  class="player-card-grid"
+>
+  <v-col
+    class="player-card-col"
+    v-for="colNum in 3"
+    :key="colNum"
+    cols="3"
+  >
     <v-row
-        v-for="rowNum in 3"
-        :key="rowNum"
-        class="PlayerCardArrayRow"
+      v-for="rowNum in 3"
+      :key="rowNum"
     >
-        <v-col
-            v-for="colNum in 3"
-            :key="colNum"
-            cols="4"
-        >
-            <v-card
-                id="PlayerCardArraySlot"
-                class="CardSlotBackground"
-            >
-
-            </v-card>
-        </v-col>
+      <v-card
+        class="CardSlotBackground"
+        id="PlayerCardArraySlot"
+      >
+        <!-- <slot :name="'card' + colNum + rowNum" /> -->
+        <!-- TODO: conditional card slot -->
+        <!-- <PazaakCard/> -->
+      </v-card>
     </v-row>
+  </v-col>
 </v-container>

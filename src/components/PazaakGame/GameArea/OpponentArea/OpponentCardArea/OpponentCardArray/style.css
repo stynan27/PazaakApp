@@ -1,27 +1,32 @@
-.OpponentCardArrayRow {
-    height: 33%;
-    width: 100%;
-}
-
-#OpponentCardArrayContainer {
-    width: 100%;
-    height: 56%;
-    left: 50%;
-    justify-content: center;
-}
-
 #OpponentCardArraySlot {
     position: relative;
-    width: 54.4%;
-    height: 105%;
-    /* left: 12%; */
-    left: 25%;
+    width: 82px;
+    height: 92px;
+ 
+    margin-bottom: 8px;
 
     border-radius: 15px;
 }
 
+.opponent-card-col {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.opponent-card-grid {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    height: 56%;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 32% 32% 32%;
+
+    background-blend-mode: darken;
+}
+
 /* example for later mobile resolutions */
-@media all and (max-width: 740px) {
+/* @media all and (max-width: 740px) {
     #OpponentCardArraySlot {
         position: relative;
         width: 70%;
@@ -31,4 +36,4 @@
     
         border-radius: 15px;
     }
-}
+} */
