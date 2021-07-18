@@ -1,17 +1,9 @@
-#PlayerCardArraySlot {
-    position: relative;
-    width: 82px;
-    height: 92px;
- 
-    margin-bottom: 8px;
-
-    border-radius: 15px;
-}
-
 .player-card-col {
   display: grid;
   align-items: center;
   justify-content: center;
+
+  row-gap: 10%;
 }
 
 .player-card-grid {
@@ -24,16 +16,3 @@
 
     background-blend-mode: darken;
 }
-
-/* example for later mobile resolutions */
-/* @media all and (max-width: 740px) {
-    #PlayerCardArraySlot {
-        position: relative;
-        width: 70%;
-        height: 90%;
-        top: -20%;
-        left: 70%;
-    
-        border-radius: 15px;
-    }
-} */

@@ -1,17 +1,8 @@
-#OpponentHandCardSlot {
-  position: relative;
-  width: 82px;
-  height: 92px;
-
-  border-radius: 15px;
-}
-
 .opponent-hand-col {
   display: grid;
   justify-content: right;
 }
 
-/* TODO: Margin percentage?? */
 .opponent-hand-grid {
   display: grid;
   width: 100%;
@@ -22,17 +13,3 @@
 
   background-blend-mode: darken;
 }
-
-/* example for later mobile resolutions */
-/* @media all and (max-width: 740px) {
-    #OpponentHandCardSlot {
-        position: relative;
-        width: 70%;
-        height: 90%;
-        top: -20%;
-        right: 3%;
-    
-        margin-right: 20%;
-        border-radius: 15px;
-    }
-} */

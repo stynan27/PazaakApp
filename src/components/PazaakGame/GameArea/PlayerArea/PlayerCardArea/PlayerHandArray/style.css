@@ -1,21 +1,3 @@
-#ModifierArea {
-  position: relative;
-  width: 82px;
-  height: 30px;
-
-  background: #242332; 
-  border-radius: 6px;
-}
-
-/* TODO: Different Slot for different screen formats */
-#PlayerHandCardSlot {
-  position: relative;
-  width: 82px;
-  height: 92px;
-
-  border-radius: 15px;
-}
-
 .player-hand-col {
   display: grid;
   justify-content: left;
@@ -31,17 +13,3 @@
 
   background-blend-mode: darken;
 }
-
-/* example for later mobile resolutions */
-/* @media all and (max-width: 740px) {
-    #PlayerHandCardSlot {
-        position: relative;
-        width: 70%;
-        height: 90%;
-        top: -20%;
-        left: 0%;
-    
-        margin-left: 20%;
-        border-radius: 15px;
-    }
-} */
