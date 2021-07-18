@@ -1,39 +1,39 @@
 #PlayerRoundsBackground {
-    position: absolute;
-    width: 3%;
-    height: 62%;
-    top: 30%;
-    left: 1%;
+  position: absolute;
+  width: 3%;
+  height: 64%;
+  top: 25%;
+  left: 1%;
 
-    border-bottom-left-radius: 55px;
+  border-bottom-left-radius: 55px;
 }
 
 #PlayerRound1Score {
-    position: absolute;
-    height: 12%;
-    width: 70%;
-    top: 4%;
-    left: 15%;
+  position: absolute;
+  height: 12%;
+  width: 70%;
+  top: 4%;
+  left: 15%;
 
-    border-radius: 31px;
+  border-radius: 31px;
 }
 
 #PlayerRound2Score {
-    position: absolute;
-    height: 12%;
-    width: 70%;
-    top: 24%;
-    left: 15%;
+  position: absolute;
+  height: 12%;
+  width: 70%;
+  top: 24%;
+  left: 15%;
 
-    border-radius: 31px;
+  border-radius: 31px;
 }
 
 #PlayerRound3Score {
-    position: absolute;
-    height: 12%;
-    width: 70%;
-    top: 44%;
-    left: 15%;
+  position: absolute;
+  height: 12%;
+  width: 70%;
+  top: 44%;
+  left: 15%;
 
-    border-radius: 31px;
+  border-radius: 31px;
 }
