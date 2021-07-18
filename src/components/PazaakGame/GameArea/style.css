@@ -121,6 +121,7 @@
 @media all and (max-width: 1536px) {
   #CardSlot {
     position: relative;
+    margin-top: 0%;
     width: 82px;
     height: 92px;
 
@@ -157,6 +158,7 @@
 @media all and (max-width: 1536px) {
   #ModifierArea {
     position: relative;
+    margin-top: 0%;
     width: 82px;
     height: 30px;
 
