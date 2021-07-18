@@ -1,12 +1,13 @@
 <container class="opponent-hand-grid">
   <container
-      v-for="colNum in 4"
-      :key="colNum"
-      cols="4"
+    class="opponent-hand-col"
+    v-for="colNum in 4"
+    :key="colNum"
+    cols="4"
   >
     <v-card
-      id="OpponentHandCardSlot"
       class="CardSlotBackground"
+      id="OpponentHandCardSlot"
     >
     </v-card>
   </container>

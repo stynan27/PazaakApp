@@ -1,36 +1,26 @@
-/* .OpponentHandCardRow {
-    height: 70%;
-    width: 100%;
-} */
-
-/* #OpponentHandBackground {
-    position: absolute;
-    width: 100%;
-    height: 55%;
-    top: 16%;
-    left: 5%;
-} */
-
 #OpponentHandCardSlot {
-    position: relative;
-    width: 82px;
-    height: 92px;
+  position: relative;
+  width: 82px;
+  height: 92px;
 
-    margin-top: 48px;
+  border-radius: 15px;
+}
 
-    border-radius: 15px;
+.opponent-hand-col {
+  display: grid;
+  justify-content: right;
 }
 
 /* TODO: Margin percentage?? */
 .opponent-hand-grid {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    margin-left: 8%;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 65% 15%;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 65% 15%;
 
-    background-blend-mode: darken;
+  background-blend-mode: darken;
 }
 
 /* example for later mobile resolutions */
