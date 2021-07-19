@@ -18,6 +18,10 @@
         <!-- <slot :name="'card' + colNum + rowNum" /> -->
         <!-- TODO: conditional card slot -->
         <!-- <PazaakCard/> -->
+        <!-- <slot v-if="colNum === 1 && rowNum === 1">
+          <PazaakCard/>
+        </slot> -->
+        <PazaakCard v-if="colNum === 1 && rowNum === 1" />
       </v-card>
     </v-row>
   </div>

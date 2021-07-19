@@ -1,12 +1,15 @@
 // @ is an alias to /src
 
-// import PlayerHandArray from '@/components/PazaakGame/GameArea/PlayerGameArea/PlayerHandArray/index'
-
-// import PazaakCard from '@/components/PazaakCard';
+import PazaakCard from '@/components/widgets/PazaakCard';
 
 export default {
   name: 'PlayerCardArray',
-  // components: {
-  //   PazaakCard,
-  // },
+  components: {
+    PazaakCard,
+  },
+  data() {
+    return {
+      currentSlot: { col: 1, row: 1,  }
+    }
+  }
 }
