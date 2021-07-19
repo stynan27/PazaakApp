@@ -1,23 +1,23 @@
-<div class="PazaakCardOutline">
-  <div class="PazaakCardBackgroundTopEllipse">
+<div id="PazaakCardOutline">
+  <div :class="backgroundColor" id="PazaakCardBackgroundTopEllipse">
   </div>
-  <div class="PazaakCardBackgroundTop">
-    <div class="PazaakCardUpperTriangle">
+  <div :class="backgroundGradientColor" id="PazaakCardBackgroundTop">
+    <div id="PazaakCardUpperTriangle">
     </div>
-    <div class="PazaakCardUpperTriangleInner">
+    <div id="PazaakCardUpperTriangleInner">
     </div>
-    <div class="PazaakCardLowerTriangle">
+    <div id="PazaakCardLowerTriangle">
     </div>
-    <div class="PazaakCardLowerTriangleInner">
+    <div id="PazaakCardLowerTriangleInner">
     </div>
-    <div class="PazaakCardValueBackground">
-      <div class="PazaakCardValue">
-        <input type="text" id="PazaakCardValueText" class="HeaderText" value="1" />
+    <div id="PazaakCardValueBackground">
+      <div id="PazaakCardValue">
+        <input type="text" id="PazaakCardValueText" class="HeaderText" :value="cardValue" />
       </div>
     </div>
   </div>
-  <div class="PazaakCardBackgroundTopEllipseHider">
+  <div :class="backgroundColor" id="PazaakCardBackgroundTopEllipseHider">
   </div>
-  <div class="PazaakCardBackgroundBottom">
+  <div :class="backgroundGradientColor" id="PazaakCardBackgroundBottom">
   </div>
 </div>

@@ -107,12 +107,23 @@
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
-@media all and (max-width: 2560px) {
+@media all and (max-width: 2600px) {
   #CardSlot {
     position: relative;
     margin-top: 15%;
     width: 122px;
     height: 140px;
+
+    border-radius: 15px;
+  }
+}
+
+@media all and (max-width: 2500px) {
+  #CardSlot {
+    position: relative;
+    margin-top: 10%;
+    width: 122px;
+    height: 120px;
 
     border-radius: 15px;
   }
@@ -143,12 +154,24 @@
   /* backdrop-filter: blur(2px); */
 }
 
-@media all and (max-width: 2560px) {
+@media all and (max-width: 2600px) {
   #ModifierArea {
     position: relative;
     margin-top: 15%;
     width: 122px;
     height: 60px;
+
+    background: #242332; 
+    border-radius: 6px;
+  }
+}
+
+@media all and (max-width: 2560px) {
+  #ModifierArea {
+    position: relative;
+    margin-top: 15%;
+    width: 122px;
+    height: 40px;
 
     background: #242332; 
     border-radius: 6px;

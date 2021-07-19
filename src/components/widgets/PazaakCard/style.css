@@ -1,101 +1,222 @@
-.PazaakCardBackgroundTop {
+.basic-card-background {
+  background: #388C3B;
+}
+
+.basic-card-background-gradient {
+  background: radial-gradient(50% 50% at 50% 50%, #2ADB31 0%, #388C3B 96.88%);
+}
+
+.add-card-background {
+  background: #1714A2;
+}
+
+.add-card-background-gradient {
+  background: radial-gradient(50% 50% at 50% 50%, #3B38D9 0%, #1714A2 100%);
+}
+
+.subtract-card-background {
+  background: #831010;
+}
+
+.subtract-card-background-gradient {
+  background: radial-gradient(50% 50% at 50% 50%, #FF4646 0%, #831010 100%);
+}
+
+.special-card-background {
+  background: #BDA007;
+}
+
+.special-card-background-gradient {
+  background: radial-gradient(50% 50% at 50% 50%, #CDBC64 0%, #BDA007 100%);
+}
+
+#PazaakCardBackgroundTop {
   position: absolute;
   width: 78%;
   height: 60%;
   top: 8%;
 
-  background: radial-gradient(50% 50% at 50% 50%, #2ADB31 0%, #388C3B 96.88%);
+  /* background: radial-gradient(50% 50% at 50% 50%, #2ADB31 0%, #388C3B 96.88%); */
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 3px;
 }
 
-.PazaakCardBackgroundTopEllipse {
+#PazaakCardBackgroundTopEllipse {
   position: absolute;
   width: 20%;
   height: 18%;
   right: 4%;
   top: 2%;
   
-  background: #388C3B;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 31px;
 }
 
-.PazaakCardBackgroundTopEllipseHider {
+#PazaakCardBackgroundTopEllipseHider {
   position: absolute;
   width: 13%;
   height: 12%;
   right: 10%;
   top: 6%;
-  
-  background: #388C3B;
- 
+   
   box-sizing: border-box;
 }
 
-.PazaakCardBackgroundBottom {
+#PazaakCardBackgroundBottom {
   position: absolute;
   width: 78%;
   height: 23%;
   bottom: 0;
 
-  background: radial-gradient(50% 50% at 50% 50%, #2ADB31 0%, #388C3B 96.88%);
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 3px;
 }
 
-.PazaakCardUpperTriangle {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 20%;
-  top: 10%;
-  
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 50px solid #000;
+@media all and (max-width: 2560px) {
+  #PazaakCardUpperTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20%;
+    top: 10%;
+    
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid #000;
+  }
+  #PazaakCardUpperTriangleInner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20%;
+    top: 12%;
+    
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid #AEA9A3;
+  }
+  #PazaakCardLowerTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20%;
+    bottom: 10%;
+
+    border-top: 50px solid #000;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+  }
+  #PazaakCardLowerTriangleInner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20%;
+    bottom: 12%;
+
+    border-top: 50px solid #AEA9A3;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+  }
 }
 
-.PazaakCardUpperTriangleInner {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 20%;
-  top: 12%;
-  
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 50px solid #AEA9A3;
+@media all and (max-width: 2400px) {
+  #PazaakCardUpperTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 36%;
+    top: 10%;
+    
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #000;
+  }
+  #PazaakCardUpperTriangleInner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 36%;
+    top: 12%;
+    
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #AEA9A3;
+  }
+  #PazaakCardLowerTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 36%;
+    bottom: 10%;
+
+    border-top: 20px solid #000;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+  }
+  #PazaakCardLowerTriangleInner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 36%;
+    bottom: 12%;
+
+    border-top: 20px solid #AEA9A3;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+  }
 }
 
-.PazaakCardLowerTriangle {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 20%;
-  bottom: 10%;
+@media all and (max-width: 1536px) {
+  #PazaakCardUpperTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 35%;
+    top: 10%;
+    
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #000;
+  }
+  #PazaakCardUpperTriangleInner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 35%;
+    top: 12%;
+    
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #AEA9A3;
+  }
+  #PazaakCardLowerTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 35%;
+    bottom: 10%;
 
-  border-top: 50px solid #000;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
+    border-top: 20px solid #000;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  #PazaakCardLowerTriangleInner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 35%;
+    bottom: 12%;
+
+    border-top: 20px solid #AEA9A3;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
 }
 
-.PazaakCardLowerTriangleInner {
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 20%;
-  bottom: 12%;
-
-  border-top: 50px solid #AEA9A3;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-}
-
-.PazaakCardOutline {
+#PazaakCardOutline {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -107,7 +228,7 @@
   border: 3px solid #000000; */
 }
 
-.PazaakCardValue {
+#PazaakCardValue {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -121,7 +242,7 @@
   box-sizing: border-box;
 }
 
-.PazaakCardValueBackground {
+#PazaakCardValueBackground {
   position: relative;
   width: 104%;
   height: 50%;
