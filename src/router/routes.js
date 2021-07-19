@@ -1,12 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
 import MainMenu from '@/components/MainMenu/index'
 import PazaakGame from '@/components/PazaakGame/index'
 
-Vue.use(Router)
-
-export default new Router({
+export default {
   routes: [
     {
       path: '/',
@@ -19,4 +14,4 @@ export default new Router({
       component: PazaakGame
     },
   ]
-})
+}

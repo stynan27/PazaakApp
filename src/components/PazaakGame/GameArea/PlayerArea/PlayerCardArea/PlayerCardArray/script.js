@@ -2,11 +2,11 @@
 
 // import PlayerHandArray from '@/components/PazaakGame/GameArea/PlayerGameArea/PlayerHandArray/index'
 
-import PazaakCard from '@/components/PazaakCard';
+// import PazaakCard from '@/components/PazaakCard';
 
 export default {
   name: 'PlayerCardArray',
-  components: {
-    PazaakCard,
-  },
+  // components: {
+  //   PazaakCard,
+  // },
 }

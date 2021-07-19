@@ -2,6 +2,9 @@
 
 export default {
   name: 'MainMenu',
-  components: {
-  },
+  methods: {
+    hostMatch() {
+      this.$router.push('pazaak-game');
+    }
+  }
 }

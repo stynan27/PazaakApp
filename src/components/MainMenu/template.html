@@ -1,30 +1,33 @@
-<container class="main-menu">
-    <row class="menu-title">
-        <container class="menu-title-text-container">
-            <row class="menu-title-text">
-                PURE PAZAAK
-            </row>
-        </container>
-    </row>
-    <row class="menu-option-1">
-        <container class="menu-option-button-container">
-            <button class="menu-option-button">
-                Host Match
-            </button>
-        </container>
-    </row>
-    <row class="menu-option-2">
-        <container class="menu-option-button-container">
-            <button class="menu-option-button">
-                Join Match
-            </button>
-        </container>
-    </row>
-    <row class="menu-option-3">
-        <container class="menu-option-button-container">
-            <button class="menu-option-button">
-                Settings
-            </button>
-        </container>
-    </row>
-</container>
+<div class="main-menu">
+  <v-row class="menu-title">
+    <v-container class="menu-title-text-container">
+      <v-row class="menu-title-text">
+        PURE PAZAAK
+      </v-row>
+    </v-container>
+  </v-row>
+  <v-row class="menu-option-1">
+    <v-container class="menu-option-button-container">
+      <button
+        class="menu-option-button"
+        @click="hostMatch()"
+      >
+        Host Match
+      </button>
+    </v-container>
+  </v-row>
+  <v-row class="menu-option-2">
+    <v-container class="menu-option-button-container">
+      <button class="menu-option-button">
+        Join Match
+      </button>
+    </v-container>
+  </v-row>
+  <v-row class="menu-option-3">
+    <v-container class="menu-option-button-container">
+      <button class="menu-option-button">
+        Settings
+      </button>
+    </v-container>
+  </v-row>
+</div>
