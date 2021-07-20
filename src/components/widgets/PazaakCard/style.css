@@ -57,9 +57,9 @@
 #PazaakCardBackgroundTopEllipseHider {
   position: absolute;
   width: 13%;
-  height: 12%;
+  height: 10%;
   right: 10%;
-  top: 6%;
+  top: 8%;
    
   box-sizing: border-box;
 }

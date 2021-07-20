@@ -15,13 +15,11 @@
         class="CardSlotBackground"
         id="CardSlot"
       >
-        <!-- <slot :name="'card' + colNum + rowNum" /> -->
-        <!-- TODO: conditional card slot -->
-        <!-- <PazaakCard/> -->
-        <!-- <slot v-if="colNum === 1 && rowNum === 1">
-          <PazaakCard/>
-        </slot> -->
-        <PazaakCard v-if="colNum === 1 && rowNum === 1" />
+        <PazaakCard
+          v-if="cardIndex(colNum, rowNum) < cardArrayLength"
+          :cardType="cardArray[cardIndex(colNum, rowNum)].cardType"
+          :cardValue="cardArray[cardIndex(colNum, rowNum)].cardValue"
+        />
       </v-card>
     </v-row>
   </div>

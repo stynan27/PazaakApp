@@ -9,6 +9,11 @@
       class="CardSlotBackground"
       id="CardSlot"
     >
+    <PazaakCard
+      v-if="colNum-1 < cardArrayLength"
+      :cardType="cardArray[colNum-1].cardType"
+      :cardValue="cardArray[colNum-1].cardValue"
+    />
     </v-card>
   </div>
 </v-container>

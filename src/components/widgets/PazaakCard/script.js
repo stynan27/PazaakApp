@@ -1,9 +1,15 @@
-// @ is an alias to /src
-
-// import PlayerHandArray from '@/components/PazaakGame/GameArea/PlayerGameArea/PlayerHandArray/index'
-
 export default {
   name: 'PazaakCard',
+  props: {
+    cardType: {
+      type: String,
+      default: 'basic'
+    },
+    cardValue: {
+      type: String,
+      default: '1'
+    },
+  },
   computed: {
     backgroundColor() {
       switch(this.cardType) {
@@ -20,11 +26,5 @@ export default {
     backgroundGradientColor() {
       return this.backgroundColor + '-gradient';
     },
-  },
-  data() {
-    return {
-      cardType: 'subtract',
-      cardValue: '-1',
-    }
   },
 }
