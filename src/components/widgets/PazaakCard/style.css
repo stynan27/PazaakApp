@@ -42,28 +42,6 @@
   border-radius: 3px;
 }
 
-#PazaakCardBackgroundTopEllipse {
-  position: absolute;
-  width: 20%;
-  height: 18%;
-  right: 4%;
-  top: 2%;
-  
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 31px;
-}
-
-#PazaakCardBackgroundTopEllipseHider {
-  position: absolute;
-  width: 13%;
-  height: 10%;
-  right: 10%;
-  top: 8%;
-   
-  box-sizing: border-box;
-}
-
 #PazaakCardBackgroundBottom {
   position: absolute;
   width: 78%;
@@ -214,6 +192,33 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
   }
+}
+
+#PazaakCardIcon {
+  position: absolute;
+  width: 16%;
+  height: 16%;
+  right: 6%;
+  top: 3%;
+   
+  border-radius: 31px;
+}
+
+#PazaakCardIconEllipse {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 18%;
+  right: 4%;
+  top: 2%;
+
+
+  
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 31px;
 }
 
 #PazaakCardOutline {

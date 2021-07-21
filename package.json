@@ -1,5 +1,5 @@
 {
-  "name": "pazaak-app",
+  "name": "vue-pazaak",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "nodemon": "^2.0.7",
     "peer": "^0.6.1",
     "vue": "^2.6.11",
+    "vue-material-design-icons": "^4.12.1",
     "vue-router": "^3.4.9",
     "vuetify": "^2.2.11"
   },

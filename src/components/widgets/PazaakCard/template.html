@@ -1,5 +1,5 @@
 <div id="PazaakCardOutline">
-  <div :class="backgroundColor" id="PazaakCardBackgroundTopEllipse">
+  <div :class="backgroundColor" id="PazaakCardIconEllipse">
   </div>
   <div :class="backgroundGradientColor" id="PazaakCardBackgroundTop">
     <div id="PazaakCardUpperTriangle">
@@ -13,12 +13,14 @@
     <div id="PazaakCardValueBackground">
       <div id="PazaakCardValue">
         <div id="PazaakCardValueText" class="HeaderText"  >
-          {{ cardValue }}
+          {{ cardValue }} 
         </div>
       </div>
     </div>
   </div>
-  <div :class="backgroundColor" id="PazaakCardBackgroundTopEllipseHider">
+  <div :class="backgroundColor" id="PazaakCardIcon">
+    <add-icon v-if="cardType === 'add'" :size="20" fillColor="#FFFFFF"/>
+    <minus-icon v-else-if="cardType === 'subtract'" :size="20" fillColor="#FFFFFF"/>
   </div>
   <div :class="backgroundGradientColor" id="PazaakCardBackgroundBottom">
   </div>
