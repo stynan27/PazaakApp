@@ -1,10 +1,10 @@
-// @ is an alias to /src
+import { mapActions } from 'vuex';
 
 export default {
   name: 'MainMenu',
   methods: {
-    hostMatch() {
-      this.$router.push('pazaak-game');
-    }
+    ...mapActions({
+      hostMatch: 'APP_HOST_MATCH',
+    }),
   }
 }

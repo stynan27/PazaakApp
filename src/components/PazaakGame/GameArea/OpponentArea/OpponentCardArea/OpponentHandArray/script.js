@@ -9,10 +9,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-      opponentSideDeck: 'OPPONENT_SIDE_DECK',
+      opponentHand: 'OPPONENT_HAND',
     }),
-    opponentSideDeckLength() {
-      return this.opponentSideDeck.length;
+    opponentHandLength() {
+      return this.opponentHand.length;
     },
   },
 }

@@ -10,9 +10,9 @@
       id="CardSlot"
     >
     <PazaakCard
-      v-if="colNum-1 < opponentSideDeckLength"
-      :cardType="opponentSideDeck[colNum-1].cardType"
-      :cardValue="opponentSideDeck[colNum-1].cardValue"
+      v-if="colNum-1 < opponentHandLength"
+      :cardType="opponentHand[colNum-1].cardType"
+      :cardValue="opponentHand[colNum-1].cardValue"
     />
     </v-card>
   </div>

@@ -9,10 +9,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-      playerSideDeck: 'PLAYER_SIDE_DECK',
+      playerHand: 'PLAYER_HAND',
     }),
-    playerSideDeckLength() {
-      return this.playerSideDeck.length;
+    playerHandLength() {
+      return this.playerHand.length;
     },
   },
 }
