@@ -37,8 +37,8 @@
     </div>
   </div>
   <div :class="backgroundColor" id="PazaakCardIcon">
-    <plus-icon v-if="cardType === 'plus'" :size="20" fillColor="#FFFFFF"/>
-    <minus-icon v-else-if="cardType === 'minus'" :size="20" fillColor="#FFFFFF"/>
+    <plus-icon v-if="cardType === 'plus' || cardType === '+/- plus'" :size="20" fillColor="#FFFFFF"/>
+    <minus-icon v-else-if="cardType === 'minus' || cardType === '+/- minus'" :size="20" fillColor="#FFFFFF"/>
   </div>
   <div :class="backgroundGradientColor" id="PazaakCardBackgroundBottom">
   </div>
