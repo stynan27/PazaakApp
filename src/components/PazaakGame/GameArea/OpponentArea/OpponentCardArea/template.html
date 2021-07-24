@@ -10,7 +10,11 @@
     
     <OpponentHandArray />
 
-    <button id="EndTurnButton" class="GameButton ButtonText">
+    <button
+      id="EndTurnButton"
+      class="GameButton ButtonText"
+      @click="endTurn()"
+    >
       END TURN
     </button>
     <button id="StandButton" class="GameButton ButtonText">

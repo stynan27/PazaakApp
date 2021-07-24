@@ -16,9 +16,9 @@
         id="CardSlot"
       >
         <PazaakCard
-          v-if="cardIndex(colNum, rowNum) < cardArrayLength"
-          :cardType="cardArray[cardIndex(colNum, rowNum)].cardType"
-          :cardValue="cardArray[cardIndex(colNum, rowNum)].cardValue"
+          v-if="cardIndex(colNum, rowNum) < playerCardArrayLength"
+          :cardType="playerCardArray[cardIndex(colNum, rowNum)].cardType"
+          :cardValue="playerCardArray[cardIndex(colNum, rowNum)].cardValue"
         />
       </v-card>
     </v-row>

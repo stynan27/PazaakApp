@@ -1,3 +1,5 @@
+import { mapGetters } from 'vuex';
+
 import PazaakCard from '@/components/widgets/PazaakCard';
 
 export default {
@@ -20,18 +22,11 @@ export default {
     }
   },
   computed: {
-    cardArrayLength() {
-      return this.cardArray.length;
+    ...mapGetters({
+      playerCardArray: 'PLAYER_CARD_ARRAY',
+    }),
+    playerCardArrayLength() {
+      return this.playerCardArray.length;
     },
   },
-  data() {
-    return {
-      cardArray: [ 
-        { cardType: 'add', cardValue: '+1' },
-        { cardType: 'subtract', cardValue: '-9' },
-        { cardType: 'special', cardValue: 'D' },
-        { cardType: 'basic', cardValue: '6' },
-      ],
-    }
-  }
 }
