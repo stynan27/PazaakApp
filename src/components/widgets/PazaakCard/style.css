@@ -6,19 +6,19 @@
   background: radial-gradient(50% 50% at 50% 50%, #2ADB31 0%, #388C3B 96.88%);
 }
 
-.add-card-background {
+.plus-card-background {
   background: #1714A2;
 }
 
-.add-card-background-gradient {
+.plus-card-background-gradient {
   background: radial-gradient(50% 50% at 50% 50%, #3B38D9 0%, #1714A2 100%);
 }
 
-.subtract-card-background {
+.minus-card-background {
   background: #831010;
 }
 
-.subtract-card-background-gradient {
+.minus-card-background-gradient {
   background: radial-gradient(50% 50% at 50% 50%, #FF4646 0%, #831010 100%);
 }
 

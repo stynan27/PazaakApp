@@ -1,4 +1,4 @@
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import PazaakCard from '@/components/widgets/PazaakCard';
 
@@ -7,7 +7,17 @@ export default {
   components: {
     PazaakCard,
   },
+  watch: {
+    playerCardArray(newCardArray) {
+      if (newCardArray && newCardArray.length) {
+        this.playerUpdateScore();
+      }
+    }
+  },
   methods: {
+    ...mapActions({
+      playerUpdateScore: 'PLAYER_UPDATE_SCORE',
+    }),
     cardIndex(colNum, rowNum) {
       switch(rowNum) {
         case 1:

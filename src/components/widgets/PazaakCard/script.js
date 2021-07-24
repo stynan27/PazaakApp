@@ -15,10 +15,10 @@ export default {
       switch(this.cardType) {
         case 'basic':
           return 'basic-card-background';
-        case 'add':
-          return 'add-card-background';
-        case 'subtract':
-          return 'subtract-card-background';
+        case 'plus' || '+/- plus':
+          return 'plus-card-background';
+        case 'minus' || '+/- minus':
+          return 'minus-card-background';
         default:
           return 'special-card-background';
       }

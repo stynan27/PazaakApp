@@ -15,7 +15,7 @@ Vue.use(Vuetify);
 Vue.use(Router);
 Vue.use(Vuex);
 
-Vue.component('add-icon', Plus);
+Vue.component('plus-icon', Plus);
 Vue.component('minus-icon', Minus);
 
 new Vue({
