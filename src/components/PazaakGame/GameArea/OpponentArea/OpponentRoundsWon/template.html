@@ -1,14 +1,14 @@
 <div id="OpponentRoundsBackground" class="HandBackground">
-    <div id="OpponentRound1Score" class="OuterEllipse">
-        <div class="InnerEllipseRight">
-        </div>
+  <div id="OpponentRound1Score" :class="opponentRoundsWon >= 1 ? 'RoundScore' : 'OuterEllipse'">
+    <div class="InnerEllipseRight">
     </div>
-    <div id="OpponentRound2Score" class="OuterEllipse">
-        <div class="InnerEllipseRight">
-        </div>
+  </div>
+  <div id="OpponentRound2Score" :class="opponentRoundsWon >= 2 ? 'RoundScore' : 'OuterEllipse'">
+    <div class="InnerEllipseRight">
     </div>
-    <div id="OpponentRound3Score" class="OuterEllipse">
-        <div class="InnerEllipseRight">
-        </div>
+  </div>
+  <div id="OpponentRound3Score" :class="opponentRoundsWon >= 3 ? 'RoundScore' : 'OuterEllipse'">
+    <div class="InnerEllipseRight">
     </div>
+  </div>
 </div>

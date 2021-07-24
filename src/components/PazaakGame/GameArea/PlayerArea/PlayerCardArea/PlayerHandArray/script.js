@@ -1,4 +1,4 @@
-// @ is an alias to /src
+import { mapGetters } from 'vuex';
 
 import PazaakCard from '@/components/widgets/PazaakCard';
 
@@ -8,13 +8,11 @@ export default {
     PazaakCard,
   },
   computed: {
-    cardArrayLength() {
-      return this.cardArray.length;
+    ...mapGetters({
+      playerSideDeck: 'PLAYER_SIDE_DECK',
+    }),
+    playerSideDeckLength() {
+      return this.playerSideDeck.length;
     },
   },
-  data() {
-    return {
-      cardArray: [],
-    }
-  }
 }

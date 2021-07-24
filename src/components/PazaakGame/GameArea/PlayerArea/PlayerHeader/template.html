@@ -1,14 +1,14 @@
 <div>
-    <div id="PlayerNameHeader" class="HandBackground">
-        <input
-          type="text"
-          id="PlayerNameText"
-          class="HeaderText"
-          value="Player"
-        >
-    </div>
-    <div id="PlayerHeaderExtent" class="HandBackground">
-    </div>
-    <div id="PlayerTurnIndicator" class="RoundBlank">
-    </div>
+  <div id="PlayerNameHeader" class="HandBackground">
+    <input
+      type="text"
+      id="PlayerNameText"
+      class="HeaderText"
+      value="Player"
+    >
+  </div>
+  <div id="PlayerHeaderExtent" class="HandBackground">
+  </div>
+  <div id="PlayerTurnIndicator" :class="isPlayerTurn ? 'RoundScore' : 'RoundBlank'">
+  </div>
 </div>
