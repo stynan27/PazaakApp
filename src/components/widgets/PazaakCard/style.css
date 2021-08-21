@@ -6,6 +6,14 @@
   background: radial-gradient(50% 50% at 50% 50%, #2ADB31 0%, #388C3B 96.88%);
 }
 
+.pazaak-card-played-hover {
+  border: 4px solid #fff;
+}
+
+.pazaak-card-special-hover {
+  border: 4px solid #c7b61a;
+}
+
 .plus-card-background {
   background: #1714A2;
 }

@@ -19,6 +19,7 @@
           v-if="cardIndex(colNum, rowNum) < opponentCardArrayLength"
           :cardType="opponentCardArray[cardIndex(colNum, rowNum)].cardType"
           :cardValue="opponentCardArray[cardIndex(colNum, rowNum)].cardValue"
+          :previouslyPlayed="true"
         />
       </v-card>
     </v-row>

@@ -19,6 +19,7 @@
           v-if="cardIndex(colNum, rowNum) < playerCardArrayLength"
           :cardType="playerCardArray[cardIndex(colNum, rowNum)].cardType"
           :cardValue="playerCardArray[cardIndex(colNum, rowNum)].cardValue"
+          :previouslyPlayed="true"
         />
       </v-card>
     </v-row>

@@ -9,6 +9,18 @@ export default {
       type: String,
       default: '1'
     },
+    previouslyPlayed: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    cardAddHover() {
+      this.isActive = true;
+    },
+    cardRemoveHover() {
+      this.isActive = false;
+    },
   },
   computed: {
     backgroundColor() {
@@ -28,5 +40,20 @@ export default {
     backgroundGradientColor() {
       return this.backgroundColor + '-gradient';
     },
+    cardHoverStyle() {
+      if (this.isActive) {
+        if (this.previouslyPlayed) {
+          return 'pazaak-card-played-hover';
+        } else {
+          return 'pazaak-card-special-hover';
+        }
+      }
+      return '';
+    },
+  },
+  data() {
+    return {
+      isActive: false,
+    };
   },
 }

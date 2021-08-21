@@ -1,4 +1,9 @@
-<div id="PazaakCardOutline">
+<div
+  id="PazaakCardOutline"
+  :class="cardHoverStyle"
+  @mouseover="cardAddHover"
+  @mouseout="cardRemoveHover"
+>
   <div :class="backgroundColor" id="PazaakCardIconEllipse">
   </div>
   <div :class="backgroundGradientColor" id="PazaakCardBackgroundTop">
