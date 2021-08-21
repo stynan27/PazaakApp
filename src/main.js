@@ -7,9 +7,9 @@ import Vuex from 'vuex';
 import Plus from 'vue-material-design-icons/Plus.vue';
 import Minus from 'vue-material-design-icons/Minus.vue';
 
-import App from './App/index';
-import routes from './router/routes';
-import store from './store'
+import App from '@/App/index';
+import routes from '@/router/routes';
+import store from '@/store'
 
 Vue.use(Vuetify);
 Vue.use(Router);

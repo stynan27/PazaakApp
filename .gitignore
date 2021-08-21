@@ -2,11 +2,16 @@
 node_modules
 /dist
 
+# package-lock
+package-lock.json
+
+# URL redirect to GitHub issues list
+*.url
 
 # env files
+*.env
 .env.local
 .env.*.local
-.env
 
 # Log files
 npm-debug.log*
