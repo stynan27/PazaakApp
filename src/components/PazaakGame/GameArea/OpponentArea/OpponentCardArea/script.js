@@ -11,15 +11,20 @@ export default {
   },
   methods: {
     ...mapMutations({
+      resetOpponentHandUsed: 'OPPONENT_HAND_USED_SET',
+      resetPlayerHandUsed: 'PLAYER_HAND_USED_SET',
       updatePlayerTurn: 'APP_IS_PLAYER_TURN_SET',
     }),
     ...mapActions({
-      hitPlayer: 'DEALER_HIT_PLAYER',
       hitOpponent: 'DEALER_HIT_OPPONENT',
+      hitPlayer: 'DEALER_HIT_PLAYER',
     }),
     endTurn() {
       this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
       this.updatePlayerTurn(!this.isPlayerTurn);
+      // reset player/opponent handUsed
+      this.resetOpponentHandUsed(false);
+      this.resetPlayerHandUsed(false);
     },
   },
   computed: {

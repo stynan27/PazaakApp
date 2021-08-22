@@ -8,8 +8,12 @@ export default {
     PazaakCard,
   },
   watch: {
-    playerCardArray(newCardArray) {
-      if (newCardArray && newCardArray.length) {
+    playerCardArray(newCardArray, oldCardArray) {
+      if (
+        newCardArray &&
+        newCardArray.length &&
+        newCardArray.length !== oldCardArray.length
+        ) {
         this.playerUpdateScore();
       }
     }

@@ -4,6 +4,7 @@ export default {
   state: {
     cardArray: [],
     hand: [],
+    handUsed: false,
     roundsWon: 0,
     score: 0,
     sideDeck: [
@@ -26,6 +27,9 @@ export default {
     PLAYER_HAND(state) {
       return state.hand;
     },
+    PLAYER_HAND_USED(state) {
+      return state.handUsed;
+    },
     PLAYER_ROUNDS_WON(state) {
       return state.roundsWon;
     },
@@ -38,11 +42,13 @@ export default {
   },
   mutations: {
     PLAYER_CARD_ARRAY_SET(state, value) {
-      console.log(value)
       state.cardArray = value;
     },
     PLAYER_HAND_SET(state, value) {
       state.hand = value;
+    },
+    PLAYER_HAND_USED_SET(state, value) {
+      state.handUsed = value;
     },
     PLAYER_ROUNDS_WON_SET(state, value) {
       state.roundsWon = value;
@@ -62,15 +68,31 @@ export default {
     },
     PLAYER_UPDATE_SCORE({ state, commit }) {
       const updatedScoreWithCards = interpretArrayScore(state.cardArray);
-      const score = updatedScoreWithCards.pop(); 
+      const score = updatedScoreWithCards.pop();
       if (score) {
         commit('PLAYER_SCORE_SET', score);
       }
-      const arrayLength = updatedScoreWithCards.length-1;
-      const updatedCardArray = updatedScoreWithCards.splice(0, arrayLength-1);
+      const updatedCardArray = updatedScoreWithCards.slice();
       if (updatedCardArray.length) {
         commit('PLAYER_CARD_ARRAY_SET', updatedScoreWithCards);
       }
-    }
+    },
+    PLAYER_USE_SPECIAL({ state, commit, getters }, { cardIndex, cardAvailable }) {
+      // only allow special when it's Player turn & no special card used
+      if (getters.APP_IS_PLAYER_TURN && cardAvailable && !state.handUsed) {
+        const selectedCard = state.hand[cardIndex];
+
+        // remove card from hand
+        let hand = state.hand.slice();
+        hand[cardIndex] = null;
+        commit('PLAYER_HAND_SET', hand);
+
+        // append selectedCard to card array
+        const playerCardArray = getters.PLAYER_CARD_ARRAY.concat(selectedCard);
+        commit('PLAYER_CARD_ARRAY_SET', playerCardArray);
+
+        commit('PLAYER_HAND_USED_SET', true);
+      }
+    },
   },
 };

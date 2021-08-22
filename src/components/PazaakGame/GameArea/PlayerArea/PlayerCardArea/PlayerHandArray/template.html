@@ -8,9 +8,10 @@
     <v-card
       class="CardSlotBackground"
       id="CardSlot"
+      @click="playerUseSpecial({ cardIndex: colNum-1, cardAvailable: isCardAvailable(colNum-1) })"
     >
       <PazaakCard
-        v-if="colNum-1 < playerHandLength"
+        v-if="isCardAvailable(colNum-1)"
         :cardType="playerHand[colNum-1].cardType"
         :cardValue="playerHand[colNum-1].cardValue"
       />

@@ -2,7 +2,7 @@
 export function doubleCardValue(card) {
   let doubledCard = Object.assign({ cardType: 'basic', cardValue: '1' }, card);
   if (['basic', 'plus', 'minus', '+/- plus', '+/- minus'].includes(card.cardType)) {
-    doubledCard.cardValue = doubledCard.cardValue * 2;
+    doubledCard.cardValue = (parseInt(doubledCard.cardValue) * 2).toString();
   }
   return doubledCard;
 }
@@ -46,17 +46,24 @@ export function interpretArrayScore(cardArray) {
         }
         return score;
       case 'double':
-        // TODO: function to return updated array which doubles previously played card
-        updatedCardArray = cardArray.map((oldCard, index) => {
-          if (index-1 >= 0) {
-            if  (index === currentIndex-1){
+        // only execute if card has not been played previously
+        if (
+          typeof card['prevPlayed'] === 'undefined' ||
+          !card['prevPlayed']
+          ) {
+          updatedCardArray = cardArray.map((oldCard, index) => {
+            if  (index < currentIndex){
               // double previous card value
               return doubleCardValue(oldCard);
+            } else if (index === currentIndex) {
+              return Object.assign({}, oldCard, { prevPlayed: true });
             } else {
               return oldCard;
             }
-          }
-        });
+          });
+          // interpret new doubled score
+          return score = interpretArrayScore(updatedCardArray.slice(0, updatedCardArray.length-1)).pop();
+        }
         return score;
       // TODO: tiebreaker acts similarly to +/-1 in terms of score, wins on ties
       // case 'tiebreaker':
