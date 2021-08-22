@@ -40,6 +40,9 @@ function createStore() {
 
         // redirect to game
         router.push('pazaak-game');
+
+        // hit player (TODO: determine who or based on host?)
+        setTimeout(() => { dispatch('DEALER_HIT_PLAYER'); }, 300);
       },
       // APP_JOIN_MATCH({ commit, dispatch, getters }) {
 

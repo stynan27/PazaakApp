@@ -20,7 +20,7 @@ export default {
       hitPlayer: 'DEALER_HIT_PLAYER',
     }),
     endTurn() {
-      this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
+      !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
       this.updatePlayerTurn(!this.isPlayerTurn);
       // reset player/opponent handUsed
       this.resetOpponentHandUsed(false);
