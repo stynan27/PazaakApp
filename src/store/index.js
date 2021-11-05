@@ -7,6 +7,8 @@ import opponent from './opponent';
 function createStore() {
   return new Vuex.Store({
     state:{
+      displayDialog: false,
+      dialogType: '',
       isPlayerTurn: true,
     },
     modules: {
@@ -15,11 +17,23 @@ function createStore() {
       opponent,
     },
     getters: {
+      APP_DISPLAY_DIALOG(state) {
+        return state.displayDialog;
+      },
+      APP_DIALOG_TYPE(state) {
+        return state.dialogType;
+      },
       APP_IS_PLAYER_TURN(state) {
         return state.isPlayerTurn;
       },
     },
     mutations: {
+      APP_DISPLAY_DIALOG_SET(state, value) {
+        state.displayDialog = value;
+      },
+      APP_DIALOG_TYPE_SET(state, value) {
+        state.dialogType = value;
+      },
       APP_IS_PLAYER_TURN_SET(state, value) {
         state.isPlayerTurn = value;
       },

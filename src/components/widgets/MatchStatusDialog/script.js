@@ -1,37 +1,25 @@
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'MatchStatusDialog',
-  props: {
-    dialogType: {
-      type: String,
-      default: 'win'
-    },
-    displayDialog: {
-      type: Boolean,
-      default: true
-    },
-    playerName: {
-      type: String,
-      default: 'Player'
-    },
-    opponentName: {
-      type: String,
-      default: 'Opponent'
-    }
-  },
   computed: {
+    ...mapGetters({
+      displayDialog: 'APP_DISPLAY_DIALOG',
+      dialogType: 'APP_DIALOG_TYPE',
+      playerName: 'PLAYER_NAME',
+      playerRoundsWon: 'PLAYER_ROUNDS_WON',
+      opponentName: 'OPPONENT_NAME',
+      opponentRoundsWon: 'OPPONENT_ROUNDS_WON',
+    }),
     dialogText() {
-      if(this.dialogType === 'win') {
-        return this.playerName.toUpperCase() + ' WINS THE SET.';
-      } else if(this.dialogType === 'loss') {
-        return this.opponentName.toUpperCase() + ' WINS THE SET.';
+      const status = this.playerRoundsWon === 3 || this.opponentRoundsWon === 3 ? 'MATCH' : 'SET';
+      if(this.dialogType === 'playerWin') {
+        return this.playerName.toUpperCase() + ' WINS THE ' + status + '.';
+      } else if(this.dialogType === 'opponentWin') {
+        return this.opponentName.toUpperCase() + ' WINS THE ' + status + '.';
       } else {
         return 'ARE YOU SURE YOU WANT TO FORFEIT THE MATCH?';
       }
     },
   },
-  data() {
-    return {
-      displayDialog: false,
-    };
-  }
 }
