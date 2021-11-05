@@ -7,6 +7,6 @@ export default {
   name: 'PazaakGame',
   components: {
     DJHeader,
-    GameArea
+    GameArea,
   },
 }

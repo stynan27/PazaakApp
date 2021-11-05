@@ -2,6 +2,7 @@ import { interpretArrayScore, shuffleDeck } from '../utils/CardHelper';
 
 export default {
   state: {
+    name: 'Opponent',
     cardArray: [],
     hand: [],
     handUsed: false,
@@ -21,6 +22,9 @@ export default {
     ],
   },
   getters: {
+    OPPONENT_NAME(state) {
+      return state.name;
+    },
     OPPONENT_CARD_ARRAY(state) {
       return state.cardArray;
     },
@@ -41,6 +45,9 @@ export default {
     },
   },
   mutations: {
+    OPPONENT_NAME_SET(state, value) {
+      state.name = value;
+    },
     OPPONENT_CARD_ARRAY_SET(state, value) {
       state.cardArray = value;
     },

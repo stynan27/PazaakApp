@@ -1,0 +1,25 @@
+<v-container v-if='displayDialog' class="status-dialog-container">
+  <v-row justify="center">
+    <v-col >
+      <h1 class="dialog-msg">
+        {{ dialogText }}
+      </h1>
+    </v-col>
+  </v-row>
+  <v-row justify="center">
+    <v-col v-if="dialogType === 'forfeit'" class='dialog-btns'>
+      <button class="confirm-btn">
+        OK
+      </button>
+      <button class="cancel-btn">
+        CANCEL
+      </button>
+    </v-col>
+    <v-col v-else class='dialog-btns'>
+      <button class="confirm-btn-orig">
+        OK
+      </button>
+    </v-col>
+  </v-row>
+  <div class="status-dialog-background"/>
+</v-container>

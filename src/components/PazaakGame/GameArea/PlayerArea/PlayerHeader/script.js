@@ -5,6 +5,7 @@ export default {
   computed: {
     ...mapGetters({
       isPlayerTurn: 'APP_IS_PLAYER_TURN',
+      playerName: 'PLAYER_NAME',
     }),
   },
 }

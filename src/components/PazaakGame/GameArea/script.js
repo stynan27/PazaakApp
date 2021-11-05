@@ -8,6 +8,7 @@ import PlayerRoundsWon from '@/components/PazaakGame/GameArea/PlayerArea/PlayerR
 import OpponentRoundsWon from '@/components/PazaakGame/GameArea/OpponentArea/OpponentRoundsWon/index'
 import PlayerCardArea from '@/components/PazaakGame/GameArea/PlayerArea/PlayerCardArea/index'
 import OpponentCardArea from '@/components/PazaakGame/GameArea/OpponentArea/OpponentCardArea/index'
+import MatchStatusDialog from '@/components/widgets/MatchStatusDialog/index'
 
 export default {
   name: 'GameArea',
@@ -19,6 +20,7 @@ export default {
     PlayerRoundsWon,
     OpponentRoundsWon,
     OpponentCardArea,
-    PlayerCardArea
+    PlayerCardArea,
+    MatchStatusDialog,
   },
 }
