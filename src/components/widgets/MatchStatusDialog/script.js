@@ -31,6 +31,7 @@ export default {
       resetRound: 'APP_RESET_ROUND',
     }),
     ...mapMutations({
+      dialogTypeSet: 'APP_DIALOG_TYPE_SET',
       playerTurnSet: 'APP_IS_PLAYER_TURN_SET',
       playerRoundsWonSet: 'PLAYER_ROUNDS_WON_SET',
       opponentRoundsWonSet: 'OPPONENT_ROUNDS_WON_SET',
