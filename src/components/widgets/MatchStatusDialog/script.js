@@ -1,4 +1,4 @@
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'MatchStatusDialog',
@@ -8,6 +8,7 @@ export default {
       dialogType: 'APP_DIALOG_TYPE',
       playerName: 'PLAYER_NAME',
       playerRoundsWon: 'PLAYER_ROUNDS_WON',
+      isPlayerTurn: 'APP_IS_PLAYER_TURN',
       opponentName: 'OPPONENT_NAME',
       opponentRoundsWon: 'OPPONENT_ROUNDS_WON',
     }),
@@ -20,6 +21,34 @@ export default {
       } else {
         return 'ARE YOU SURE YOU WANT TO FORFEIT THE MATCH?';
       }
+    },
+  },
+  methods: {
+    ...mapActions({
+      closeDialog: 'APP_CLOSE_DIALOG',
+      determineRoundWinner: 'APP_DETERMINE_ROUND_WINNER',
+      endMatch: 'APP_END_MATCH',
+      resetRound: 'APP_RESET_ROUND',
+    }),
+    ...mapMutations({
+      playerTurnSet: 'APP_IS_PLAYER_TURN_SET',
+      playerRoundsWonSet: 'PLAYER_ROUNDS_WON_SET',
+      opponentRoundsWonSet: 'OPPONENT_ROUNDS_WON_SET',
+    }),
+    cancel() {
+      this.closeDialog();
+    },
+    forfeit() {
+      this.isPlayerTurn ? this.opponentRoundsWonSet(3) : this.playerRoundsWonSet(3);
+      const winnerType = this.isPlayerTurn ? 'opponentWin' : 'playerWin';
+      this.dialogTypeSet(winnerType);
+    },
+    async ok() {
+      if (this.playerRoundsWon === 3 || this.opponentRoundsWon === 3) {
+        this.endMatch(this.$router);
+      }
+      await this.resetRound();
+      this.closeDialog();
     },
   },
 }

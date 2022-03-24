@@ -20,6 +20,7 @@ export default {
       {cardType: 'minus', cardValue: '6'},
       {cardType: 'minus', cardValue: '3'},
     ],
+    isStanding: false,
   },
   getters: {
     PLAYER_NAME(state) {
@@ -43,6 +44,9 @@ export default {
     PLAYER_SIDE_DECK(state) {
       return state.sideDeck;
     },
+    PLAYER_IS_STANDING(state) {
+      return state.isStanding;
+    },
   },
   mutations: {
     PLAYER_NAME_SET(state, value) {
@@ -63,8 +67,11 @@ export default {
     PLAYER_SCORE_SET(state, value) {
       state.score = value;
     },
-    PLAYER_SIDE_DECK(state, value) {
+    PLAYER_SIDE_DECK_SET(state, value) {
       state.sideDeck = value;
+    },
+    PLAYER_IS_STANDING_SET(state, value) {
+      state.isStanding = value;
     },
   },
   actions: {
@@ -72,6 +79,13 @@ export default {
       const sideDeck = state.sideDeck;
       // draw first 4 for hand from shuffled sideDeck
       commit('PLAYER_HAND_SET', shuffleDeck(sideDeck).slice(0, 4));
+    },
+    PLAYER_INCREMENT_ROUNDS_WON({ state, commit }) { 
+      commit('PLAYER_ROUNDS_WON_SET', state.roundsWon + 1);
+    },
+    PLAYER_RESET_ROUND({ commit }) {
+      commit('PLAYER_SCORE_SET', 0);
+      commit('PLAYER_CARD_ARRAY_SET', []);
     },
     PLAYER_UPDATE_SCORE({ state, commit }) {
       const updatedScoreWithCards = interpretArrayScore(state.cardArray);

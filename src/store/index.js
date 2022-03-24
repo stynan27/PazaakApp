@@ -4,6 +4,39 @@ import dealer from './dealer';
 import player from './player';
 import opponent from './opponent';
 
+////// HELPERS //////
+// Checks if the current player is over 20 (they lose)
+const checkBust = (isPlayerTurn, playerScore, opponentScore) => {
+  if (isPlayerTurn) {
+    return playerScore > 20 ? 'opponentWin' : 'none';
+  } else {
+    return opponentScore > 20 ? 'playerWin' : 'none';
+  }
+};
+
+// Checks if the current player's card array is 9 (they win)
+const checkFillTable = (isPlayerTurn, pCardArrayLength, oCardArrayLength) => {
+  if (isPlayerTurn) {
+    return pCardArrayLength > 8 ? 'playerWin' : 'none';
+  } else {
+    return oCardArrayLength > 8 ? 'opponentWin' : 'none';
+  }
+};
+
+const checkOutScore = (pIsStanding, oIsStanding, pScore, oScore) => {
+  if (pIsStanding && oIsStanding) {
+    if (pScore > oScore) {
+      return 'playerWin';
+    } else if (pScore < oScore) {
+      return 'opponentWin';
+    } else {
+      return 'tie';
+    }
+  }
+  return 'none';
+};
+
+
 function createStore() {
   return new Vuex.Store({
     state:{
@@ -39,6 +72,41 @@ function createStore() {
       },
     },
     actions: {
+      APP_CLOSE_DIALOG({ commit }) {
+        commit('APP_DIALOG_TYPE_SET', '');
+        commit('APP_DISPLAY_DIALOG_SET', false);
+      },
+      // validates if a win condition has occured
+      // returns true if it has
+      APP_DETERMINE_ROUND_WINNER({ state, getters }) {
+        let winner = 'none';
+        // 1.) Bust: Did the current player/opponent END or STAND over 20? 
+        // -> other player wins
+        winner = checkBust(state.isPlayerTurn, getters.PLAYER_SCORE, getters.OPPONENT_SCORE);
+        if (winner !== 'none') {
+          return winner;
+        }
+        // 2.) Filling the Table: Filled all card array slots (without Bust over 20)
+        winner = checkFillTable(state.isPlayerTurn, getters.PLAYER_CARD_ARRAY.length, getters.OPPONENT_CARD_ARRAY.length);
+        if (winner !== 'none') {
+          return winner;
+        }
+        // 3.) Outscore: did the previous player and current player STAND? 
+        // -> if so check for highest score (without bust)
+        winner = checkOutScore(getters.PLAYER_IS_STANDING, getters.OPPONENT_IS_STANDING, getters.PLAYER_SCORE, getters.OPPONENT_SCORE);
+        return winner;
+      },
+      APP_DISPLAY_DIALOG({ commit }, { dialogType }) {
+        commit('APP_DIALOG_TYPE_SET', dialogType);
+        commit('APP_DISPLAY_DIALOG_SET', true);
+      },
+      APP_END_MATCH({ state }, router) {
+        state.displayDialog = false;
+        // TODO: handle match disconnection... dialogs?
+
+        // redirect to main menu
+        router.push('/');
+      },
       // TODO: setup connection to server/perform fetches/commit defaults to modules
       // i.e. 
       // INITIALIZE({ commit, dispatch, getters }) {
@@ -61,6 +129,10 @@ function createStore() {
       // APP_JOIN_MATCH({ commit, dispatch, getters }) {
 
       // },
+      APP_RESET_ROUND({ dispatch }) {
+        dispatch('PLAYER_RESET_ROUND');
+        dispatch('OPPONENT_RESET_ROUND');
+      },
     },
   });
 }
