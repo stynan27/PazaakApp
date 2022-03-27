@@ -26,6 +26,7 @@ export default {
       hitPlayer: 'DEALER_HIT_PLAYER',
     }),
     async endTurn() {
+      // TODO: make below into a store function?
       await this.determineWinner().then((winner) => {
         if (winner !== 'none') {
           if (winner === 'playerWin') {
@@ -34,27 +35,44 @@ export default {
           } else if (winner === 'opponentWin') {
             this.incrOpponentRoundsWon();
             this.displayDialog({ dialogType: winner });
+          } else if (winner === 'tie') {
+            this.incrPlayerRoundsWon();
+            this.incrOpponentRoundsWon();
+            this.displayDialog({ dialogType: winner });
           }
+          // reset player/opponent isStanding
+          this.playerStandingSet(false);
+          this.opponentStandingSet(false);
 
           // reset player/opponent handUsed
           this.resetOpponentHandUsed(false);
           this.resetPlayerHandUsed(false);
         } else {
-          !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
-          this.updatePlayerTurn(!this.isPlayerTurn);
+          if (this.playerIsStanding) {
+            this.hitOpponent();
+            this.updatePlayerTurn(false);
+          } else if (this.opponentIsStanding) {
+            this.hitPlayer();
+            this.updatePlayerTurn(true);
+          } else {
+            !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
+            this.updatePlayerTurn(!this.isPlayerTurn);
+          }
           // reset player/opponent handUsed
           this.resetOpponentHandUsed(false);
           this.resetPlayerHandUsed(false);
         }
       });
     },
-    stand() {
-      this.isPlayerTurn ? this.playerStandingSet(true) : this.opponentStandingSet(true);
-      // TODO: check score before continuing...
-      // if winCondition !== 'none', then ...
-      // -> reset each player's score
-      // -> increase round score to winner
-      // -> set isStanding to false for both players
+    async stand() {
+      // set isStanding attribute
+      if (this.isPlayerTurn) {
+        this.playerStandingSet(true);
+      } else {
+        this.opponentStandingSet(true);
+      }
+
+      this.endTurn();
     },
     forfeit() {
       this.displayDialog({ dialogType: 'forfeit' });

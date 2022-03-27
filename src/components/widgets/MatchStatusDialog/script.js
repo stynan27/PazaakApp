@@ -18,6 +18,11 @@ export default {
         return this.playerName.toUpperCase() + ' WINS THE ' + status + '.';
       } else if(this.dialogType === 'opponentWin') {
         return this.opponentName.toUpperCase() + ' WINS THE ' + status + '.';
+      } else if (this.dialogType === 'tie') {
+        if (this.playerRoundsWon === 3 && this.opponentRoundsWon === 3) {
+          return 'GAME TIE.';
+        }
+        return 'MATCH TIE.';
       } else {
         return 'ARE YOU SURE YOU WANT TO FORFEIT THE MATCH?';
       }
@@ -47,6 +52,15 @@ export default {
       this.dialogTypeSet(winnerType);
     },
     async ok() {
+      if (this.dialogType === 'tie') {
+        if (this.playerRoundsWon === 3 && this.opponentRoundsWon < 3) {
+          this.dialogTypeSet('playerWin');
+          return;
+        } else if (this.playerRoundsWon < 3 && this.opponentRoundsWon === 3) {
+          this.dialogTypeSet('opponentWin');
+          return;
+        }
+      }
       if (this.playerRoundsWon === 3 || this.opponentRoundsWon === 3) {
         this.endMatch(this.$router);
       }
