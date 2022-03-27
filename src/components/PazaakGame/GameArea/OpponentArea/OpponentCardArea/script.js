@@ -36,7 +36,6 @@ export default {
             this.displayDialog({ dialogType: winner });
           }
 
-          this.updatePlayerTurn(!this.isPlayerTurn);
           // reset player/opponent handUsed
           this.resetOpponentHandUsed(false);
           this.resetPlayerHandUsed(false);

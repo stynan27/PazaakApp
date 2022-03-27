@@ -28,13 +28,15 @@ export default {
       closeDialog: 'APP_CLOSE_DIALOG',
       determineRoundWinner: 'APP_DETERMINE_ROUND_WINNER',
       endMatch: 'APP_END_MATCH',
+      hitOpponent: 'DEALER_HIT_OPPONENT',
+      hitPlayer: 'DEALER_HIT_PLAYER',
       resetRound: 'APP_RESET_ROUND',
     }),
     ...mapMutations({
       dialogTypeSet: 'APP_DIALOG_TYPE_SET',
-      playerTurnSet: 'APP_IS_PLAYER_TURN_SET',
-      playerRoundsWonSet: 'PLAYER_ROUNDS_WON_SET',
       opponentRoundsWonSet: 'OPPONENT_ROUNDS_WON_SET',
+      playerRoundsWonSet: 'PLAYER_ROUNDS_WON_SET',
+      updatePlayerTurn: 'APP_IS_PLAYER_TURN_SET',
     }),
     cancel() {
       this.closeDialog();
@@ -49,6 +51,13 @@ export default {
         this.endMatch(this.$router);
       }
       await this.resetRound();
+      if (this.dialogType === 'playerWin') {
+        this.updatePlayerTurn(false);
+        this.hitOpponent();
+      } else {
+        this.updatePlayerTurn(true);
+        this.hitPlayer();
+      }
       this.closeDialog();
     },
   },
