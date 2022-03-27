@@ -20,9 +20,9 @@ export default {
         return this.opponentName.toUpperCase() + ' WINS THE ' + status + '.';
       } else if (this.dialogType === 'tie') {
         if (this.playerRoundsWon === 3 && this.opponentRoundsWon === 3) {
-          return 'GAME TIE.';
+          return 'THE MATCH IS A DRAW.';
         }
-        return 'MATCH TIE.';
+        return 'THE SET IS A DRAW.';
       } else {
         return 'ARE YOU SURE YOU WANT TO FORFEIT THE MATCH?';
       }
