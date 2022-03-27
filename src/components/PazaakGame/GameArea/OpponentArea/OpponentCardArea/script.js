@@ -35,14 +35,19 @@ export default {
             this.incrOpponentRoundsWon();
             this.displayDialog({ dialogType: winner });
           }
+
+          this.updatePlayerTurn(!this.isPlayerTurn);
+          // reset player/opponent handUsed
+          this.resetOpponentHandUsed(false);
+          this.resetPlayerHandUsed(false);
+        } else {
+          !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
+          this.updatePlayerTurn(!this.isPlayerTurn);
+          // reset player/opponent handUsed
+          this.resetOpponentHandUsed(false);
+          this.resetPlayerHandUsed(false);
         }
       });
-
-      !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
-      this.updatePlayerTurn(!this.isPlayerTurn);
-      // reset player/opponent handUsed
-      this.resetOpponentHandUsed(false);
-      this.resetPlayerHandUsed(false);
     },
     stand() {
       this.isPlayerTurn ? this.playerStandingSet(true) : this.opponentStandingSet(true);
