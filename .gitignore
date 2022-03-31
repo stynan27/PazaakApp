@@ -5,6 +5,9 @@ node_modules
 # package-lock
 package-lock.json
 
+# sound effects
+public/sounds/*.mp3
+
 # URL redirect to GitHub issues list
 *.url
 
