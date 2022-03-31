@@ -3,6 +3,8 @@ import { mapGetters, mapMutations, mapActions } from 'vuex';
 import OpponentCardArray from '@/components/PazaakGame/GameArea/OpponentArea/OpponentCardArea/OpponentCardArray'
 import OpponentHandArray from '@/components/PazaakGame/GameArea/OpponentArea/OpponentCardArea/OpponentHandArray'
 
+import { playSoundEffect } from '../../../../../utils/SoundEffects';
+
 export default {
   name: 'OpponentCardArea',
   components: {
@@ -27,15 +29,19 @@ export default {
     }),
     async endTurn() {
       // TODO: make below into a store function?
-      await this.determineWinner().then((winner) => {
+      await this.determineWinner().then(async (winner) => {
         if (winner !== 'none') {
           if (winner === 'playerWin') {
-            this.incrPlayerRoundsWon();
+            await this.incrPlayerRoundsWon();
+            this.playerRoundsWon === 3 ? playSoundEffect('matchWon') : playSoundEffect('roundWon');
+            playSoundEffect('roundWon');
             this.displayDialog({ dialogType: winner });
           } else if (winner === 'opponentWin') {
-            this.incrOpponentRoundsWon();
+            await this.incrOpponentRoundsWon();
+            this.opponentRoundsWon === 3 ? playSoundEffect('matchLoss') : playSoundEffect('roundLoss');
             this.displayDialog({ dialogType: winner });
           } else if (winner === 'tie') {
+            playSoundEffect('tie');
             this.incrPlayerRoundsWon();
             this.incrOpponentRoundsWon();
             this.displayDialog({ dialogType: winner });
@@ -81,7 +87,9 @@ export default {
   computed: {
     ...mapGetters({
       opponentIsStanding: 'OPPONENT_IS_STANDING',
+      opponentRoundsWon: 'OPPONENT_ROUNDS_WON',
       playerIsStanding: 'PLAYER_IS_STANDING',
+      playerRoundsWon: 'PLAYER_ROUNDS_WON',
       isPlayerTurn: 'APP_IS_PLAYER_TURN',
     }),
   }

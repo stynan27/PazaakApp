@@ -80,8 +80,8 @@ export default {
       // draw first 4 for hand from shuffled sideDeck
       commit('PLAYER_HAND_SET', shuffleDeck(sideDeck).slice(0, 4));
     },
-    PLAYER_INCREMENT_ROUNDS_WON({ state, commit }) { 
-      commit('PLAYER_ROUNDS_WON_SET', state.roundsWon + 1);
+    async PLAYER_INCREMENT_ROUNDS_WON({ state, commit }) { 
+      await commit('PLAYER_ROUNDS_WON_SET', state.roundsWon + 1);
     },
     PLAYER_RESET_ROUND({ commit }) {
       commit('PLAYER_SCORE_SET', 0);

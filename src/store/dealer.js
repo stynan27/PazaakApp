@@ -35,7 +35,6 @@ export default {
       // TODO: reset deck at end of round
       const deckSize = state.deck.length;
       const topCard = state.deck[deckSize-1];
-      // console.log('playerCardArray', getters.PLAYER_CARD_ARRAY, 'deck length', state.deck.length, topCard);
       // append topCard to player card array, then commit new array
       let playerCardArray = getters.PLAYER_CARD_ARRAY.concat(topCard);
       commit('PLAYER_CARD_ARRAY_SET', playerCardArray);

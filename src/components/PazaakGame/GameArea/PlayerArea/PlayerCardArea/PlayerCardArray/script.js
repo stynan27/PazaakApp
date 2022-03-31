@@ -2,6 +2,8 @@ import { mapGetters, mapActions } from 'vuex';
 
 import PazaakCard from '@/components/widgets/PazaakCard';
 
+import { playSoundEffect } from '../../../../../../utils/SoundEffects';
+
 export default {
   name: 'PlayerCardArray',
   components: {
@@ -15,6 +17,10 @@ export default {
         newCardArray.length !== oldCardArray.length
         ) {
         this.playerUpdateScore();
+        const lastPlayed = newCardArray[newCardArray.length-1]['cardType'];
+        lastPlayed !== 'basic' ? 
+          playSoundEffect('special') : this.playerScore > 20 ? 
+            playSoundEffect('bust') : playSoundEffect('hit');
       }
     }
   },
@@ -38,6 +44,7 @@ export default {
   computed: {
     ...mapGetters({
       playerCardArray: 'PLAYER_CARD_ARRAY',
+      playerScore: 'PLAYER_SCORE',
     }),
     playerCardArrayLength() {
       return this.playerCardArray.length;
