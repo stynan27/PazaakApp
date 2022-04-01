@@ -5,6 +5,8 @@ import OpponentHandArray from '@/components/PazaakGame/GameArea/OpponentArea/Opp
 
 import { playSoundEffect } from '../../../../../utils/SoundEffects';
 
+const EFFECT_TIME_MS = 300;
+
 export default {
   name: 'OpponentCardArea',
   components: {
@@ -27,61 +29,69 @@ export default {
       hitOpponent: 'DEALER_HIT_OPPONENT',
       hitPlayer: 'DEALER_HIT_PLAYER',
     }),
-    async endTurn() {
-      // TODO: make below into a store function?
-      await this.determineWinner().then(async (winner) => {
-        if (winner !== 'none') {
-          if (winner === 'playerWin') {
-            await this.incrPlayerRoundsWon();
-            this.playerRoundsWon === 3 ? playSoundEffect('matchWon') : playSoundEffect('roundWon');
-            playSoundEffect('roundWon');
-            this.displayDialog({ dialogType: winner });
-          } else if (winner === 'opponentWin') {
-            await this.incrOpponentRoundsWon();
-            this.opponentRoundsWon === 3 ? playSoundEffect('matchLoss') : playSoundEffect('roundLoss');
-            this.displayDialog({ dialogType: winner });
-          } else if (winner === 'tie') {
-            playSoundEffect('tie');
-            this.incrPlayerRoundsWon();
-            this.incrOpponentRoundsWon();
-            this.displayDialog({ dialogType: winner });
-          }
-          // reset player/opponent isStanding
-          this.playerStandingSet(false);
-          this.opponentStandingSet(false);
+    endTurn() {
+      playSoundEffect('buttonClick');
+      setTimeout(async () => {
+        // TODO: make below into a store function?
+        await this.determineWinner().then(async (winner) => {
+          if (winner !== 'none') {
+            if (winner === 'playerWin') {
+              await this.incrPlayerRoundsWon();
+              this.playerRoundsWon === 3 ? playSoundEffect('matchWon') : playSoundEffect('roundWon');
+              playSoundEffect('roundWon');
+              this.displayDialog({ dialogType: winner });
+            } else if (winner === 'opponentWin') {
+              await this.incrOpponentRoundsWon();
+              this.opponentRoundsWon === 3 ? playSoundEffect('matchLoss') : playSoundEffect('roundLoss');
+              this.displayDialog({ dialogType: winner });
+            } else if (winner === 'tie') {
+              playSoundEffect('tie');
+              this.incrPlayerRoundsWon();
+              this.incrOpponentRoundsWon();
+              this.displayDialog({ dialogType: winner });
+            }
+            // reset player/opponent isStanding
+            this.playerStandingSet(false);
+            this.opponentStandingSet(false);
 
-          // reset player/opponent handUsed
-          this.resetOpponentHandUsed(false);
-          this.resetPlayerHandUsed(false);
-        } else {
-          if (this.playerIsStanding) {
-            this.hitOpponent();
-            this.updatePlayerTurn(false);
-          } else if (this.opponentIsStanding) {
-            this.hitPlayer();
-            this.updatePlayerTurn(true);
+            // reset player/opponent handUsed
+            this.resetOpponentHandUsed(false);
+            this.resetPlayerHandUsed(false);
           } else {
-            !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
-            this.updatePlayerTurn(!this.isPlayerTurn);
+            if (this.playerIsStanding) {
+              this.hitOpponent();
+              this.updatePlayerTurn(false);
+            } else if (this.opponentIsStanding) {
+              this.hitPlayer();
+              this.updatePlayerTurn(true);
+            } else {
+              !this.isPlayerTurn ? this.hitPlayer() : this.hitOpponent();
+              this.updatePlayerTurn(!this.isPlayerTurn);
+            }
+            // reset player/opponent handUsed
+            this.resetOpponentHandUsed(false);
+            this.resetPlayerHandUsed(false);
           }
-          // reset player/opponent handUsed
-          this.resetOpponentHandUsed(false);
-          this.resetPlayerHandUsed(false);
-        }
-      });
+        });
+      }, EFFECT_TIME_MS);
     },
-    async stand() {
-      // set isStanding attribute
-      if (this.isPlayerTurn) {
-        this.playerStandingSet(true);
-      } else {
-        this.opponentStandingSet(true);
-      }
+    stand() {
+      setTimeout(() => {
+        // set isStanding attribute
+        if (this.isPlayerTurn) {
+          this.playerStandingSet(true);
+        } else {
+          this.opponentStandingSet(true);
+        }
 
-      this.endTurn();
+        this.endTurn();
+      }, EFFECT_TIME_MS);
     },
     forfeit() {
-      this.displayDialog({ dialogType: 'forfeit' });
+      playSoundEffect('buttonClick');
+      setTimeout(() => {
+        this.displayDialog({ dialogType: 'forfeit' });
+      }, EFFECT_TIME_MS);
     },
   },
   computed: {

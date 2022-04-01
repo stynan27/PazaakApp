@@ -1,5 +1,9 @@
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 
+import { playSoundEffect } from '../../../utils/SoundEffects';
+
+const EFFECT_TIME_MS = 300;
+
 export default {
   name: 'MatchStatusDialog',
   computed: {
@@ -44,35 +48,43 @@ export default {
       updatePlayerTurn: 'APP_IS_PLAYER_TURN_SET',
     }),
     cancel() {
-      this.closeDialog();
+      playSoundEffect('buttonClick');
+      setTimeout(this.closeDialog(), EFFECT_TIME_MS);
     },
     forfeit() {
-      this.isPlayerTurn ? this.opponentRoundsWonSet(3) : this.playerRoundsWonSet(3);
-      const winnerType = this.isPlayerTurn ? 'opponentWin' : 'playerWin';
-      this.dialogTypeSet(winnerType);
+      playSoundEffect('buttonClick');
+      setTimeout(async () => {
+        this.isPlayerTurn ? this.opponentRoundsWonSet(3) : this.playerRoundsWonSet(3);
+        const winnerType = this.isPlayerTurn ? 'opponentWin' : 'playerWin';
+        this.dialogTypeSet(winnerType);
+        this.isPlayerTurn ? playSoundEffect('matchLoss') : playSoundEffect('matchWon');
+      }, EFFECT_TIME_MS);
     },
     async ok() {
-      if (this.dialogType === 'tie') {
-        if (this.playerRoundsWon === 3 && this.opponentRoundsWon < 3) {
-          this.dialogTypeSet('playerWin');
-          return;
-        } else if (this.playerRoundsWon < 3 && this.opponentRoundsWon === 3) {
-          this.dialogTypeSet('opponentWin');
-          return;
+      playSoundEffect('buttonClick');
+      setTimeout(async () => {
+        if (this.dialogType === 'tie') {
+          if (this.playerRoundsWon === 3 && this.opponentRoundsWon < 3) {
+            this.dialogTypeSet('playerWin');
+            return;
+          } else if (this.playerRoundsWon < 3 && this.opponentRoundsWon === 3) {
+            this.dialogTypeSet('opponentWin');
+            return;
+          }
         }
-      }
-      if (this.playerRoundsWon === 3 || this.opponentRoundsWon === 3) {
-        this.endMatch(this.$router);
-      }
-      await this.resetRound();
-      if (this.dialogType === 'playerWin') {
-        this.updatePlayerTurn(false);
-        this.hitOpponent();
-      } else {
-        this.updatePlayerTurn(true);
-        this.hitPlayer();
-      }
-      this.closeDialog();
+        if (this.playerRoundsWon === 3 || this.opponentRoundsWon === 3) {
+          this.endMatch(this.$router);
+        }
+        await this.resetRound();
+        if (this.dialogType === 'playerWin') {
+          this.updatePlayerTurn(false);
+          this.hitOpponent();
+        } else {
+          this.updatePlayerTurn(true);
+          this.hitPlayer();
+        }
+        this.closeDialog();
+      }, EFFECT_TIME_MS);  
     },
   },
 }
