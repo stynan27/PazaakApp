@@ -6,5 +6,5 @@ export default {
     ...mapActions({
       hostMatch: 'APP_HOST_MATCH',
     }),
-  }
+  },
 }

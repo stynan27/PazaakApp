@@ -2,6 +2,7 @@ import Vuex from 'vuex';
 
 import { playSoundEffect } from '../utils/SoundEffects';
 
+import ws from './ws';
 import dealer from './dealer';
 import player from './player';
 import opponent from './opponent';
@@ -47,6 +48,7 @@ function createStore() {
       isPlayerTurn: true,
     },
     modules: {
+      ws,
       dealer,
       player,
       opponent,
@@ -102,9 +104,10 @@ function createStore() {
         commit('APP_DIALOG_TYPE_SET', dialogType);
         commit('APP_DISPLAY_DIALOG_SET', true);
       },
-      APP_END_MATCH({ state }, router) {
+      APP_END_MATCH({ state, dispatch }, router) {
         state.displayDialog = false;
-        // TODO: handle match disconnection... dialogs?
+        
+        dispatch('WS_CLOSE_MATCH');
 
         // redirect to main menu
         router.push('/');
@@ -120,7 +123,7 @@ function createStore() {
         dispatch('PLAYER_DRAW_HAND');
         dispatch('OPPONENT_DRAW_HAND');
 
-        // TODO: contact opponent to update their session (ws?)
+        dispatch('WS_HOST_MATCH');
 
         // redirect to game
         router.push('pazaak-game');
