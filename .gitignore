@@ -2,17 +2,8 @@
 node_modules
 /dist
 
-# package-lock
-package-lock.json
 
-# sound effects
-public/sounds/*.mp3
-
-# URL redirect to GitHub issues list
-*.url
-
-# env files
-*.env
+# local env files
 .env.local
 .env.*.local
 
@@ -30,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+#Electron-builder output
+/dist_electron
