@@ -3,25 +3,21 @@ An ElectronJS desktop application created to replicated my favorite Star Wars mi
 
 ![Example](https://github.com/stynan27/PazaakApp/blob/master/PazaakExample.gif)
 
-## Project setup
+# Figma Example
+https://www.figma.com/file/5Vped45AujHOqZIx60CH5b/PurePazaak-Mockup?node-id=0%3A1&t=YKT38HXiqeqjTaV2-1
+![image](https://user-images.githubusercontent.com/32597881/222840598-6e29f1aa-ee69-4a5d-9b23-5e38fe352e83.png)
+
+## ElectronJS Project setup
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run electron:serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run electron:build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
